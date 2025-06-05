@@ -13,9 +13,13 @@
     </button>
     @if (modulesOpen()[moduleGroup.key]) {
     @for (module of modules()[moduleGroup.key]; track $index) {
-    <div class="bg-zinc-800 p-4 rounded-lg grid grid-cols-[8rem_1fr_6rem_auto] gap-2 items-center">
+    <div class="bg-zinc-800 p-4 rounded-lg grid grid-cols-[8rem_1fr_6rem_6rem_10rem] gap-2 items-center">
         <p>{{ module.code }}</p>
         <h2 class="italic">{{ module.name }}</h2>
+        <select class="bg-green-700 rounded-full px-4 py-1" title="Semester">
+            <b class="text-lg text-zinc-100">test</b>
+            <option value="done">Besucht</option>
+        </select>
         <p class="text-sm icon-container text-zinc-400" title="ECTS-Credits"><lucide-icon name="award" /><b class="text-lg text-zinc-100">{{ module.credits }}</b> Credits</p>
         <a [href]="module.url" class="icon-container ml-2 hover:bg-zinc-700 rounded-md p-2">Modulbeschrieb <lucide-icon name="external-link" size="16" /></a>
     </div>

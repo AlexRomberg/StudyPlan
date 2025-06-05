@@ -1,8 +1,9 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, effect, inject, OnInit, signal } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
 import { FormsModule } from '@angular/forms';
 import { moduleMap, plans } from '../../models/moduleplans';
 import { degreeProgram, ModuleDefinition } from '../../util/types';
+import { PersonalizationService } from '../../services/personalization.service';
 
 @Component({
   selector: 'app-plan',
@@ -11,9 +12,14 @@ import { degreeProgram, ModuleDefinition } from '../../util/types';
   styleUrl: './plan.component.css'
 })
 export class PlanComponent {
-  public selectedDegreeProgram = signal<degreeProgram>("I-VZ");
+  private personalization = inject(PersonalizationService);
+  public selectedDegreeProgram = signal<degreeProgram>(this.personalization.getDegreeProgram());
   public selectedModulePlan = computed(() => plans[this.selectedDegreeProgram()]);
   public selectedModule = signal<ModuleDefinition | undefined>(undefined);
+
+  constructor() {
+    effect(() => { this.personalization.setDegreeProgram(this.selectedDegreeProgram()); });
+  }
 
   asModules(codes: string[]): (ModuleDefinition | undefined)[] {
     return codes.map(value => moduleMap.get(value));
