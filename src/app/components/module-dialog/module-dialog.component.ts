@@ -3,7 +3,8 @@ import { DialogService } from '../../services/dialog.service';
 import { LucideAngularModule } from 'lucide-angular';
 import { PersonalizationService } from '../../services/personalization.service';
 import { FormsModule } from '@angular/forms';
-import { ModulePersonalization } from '../../util/types';
+import { ModulePersonalization, ModulePlanPersonalizationItem } from '../../util/types';
+import { moduleMap } from '../../models/moduleplans';
 
 @Component({
   selector: 'app-module-dialog',
@@ -14,6 +15,7 @@ import { ModulePersonalization } from '../../util/types';
 export class ModuleDialogComponent {
   dialog = inject(DialogService);
   personalization = inject(PersonalizationService);
+
   personalizationData = computed<ModulePersonalization | null>(() => {
     const module = this.dialog.moduleDialogData()?.module;
     if (!module) return null;
@@ -26,8 +28,28 @@ export class ModuleDialogComponent {
     };
   });
 
-  public updateNotes(notes: string) {
+  modulePlanPersonalizationData = computed<ModulePlanPersonalizationItem | undefined>(() => {
     const module = this.dialog.moduleDialogData()?.module;
+    const semesterIndex = this.dialog.moduleDialogData()?.semesterIndex;
+    const moduleIndex = this.dialog.moduleDialogData()?.moduleIndex;
+
+    if (!module || semesterIndex === undefined || moduleIndex === undefined) return undefined;
+    return this.personalization.getModulePlanPersonalization(this.personalization.getDegreeProgram(), semesterIndex, moduleIndex);
+  });
+
+  resolvedModule = computed(() => {
+    const module = this.dialog.moduleDialogData()?.module;
+    if (!module) {
+      return undefined;
+    }
+    if (module.isGenericModule) {
+      return this.getLinkedModule()
+    }
+    return module;
+  });
+
+  public updateNotes(notes: string) {
+    const module = this.resolvedModule();
     if (!module) return;
     this.personalization.setModulePersonalization(module.code, {
       notes,
@@ -35,7 +57,7 @@ export class ModuleDialogComponent {
   }
 
   public updateCredited(credited: boolean) {
-    const module = this.dialog.moduleDialogData()?.module;
+    const module = this.resolvedModule();
     if (!module) return;
     this.personalization.setModulePersonalization(module.code, {
       credited
@@ -43,7 +65,7 @@ export class ModuleDialogComponent {
   }
 
   public updateInterested(interested: boolean) {
-    const module = this.dialog.moduleDialogData()?.module;
+    const module = this.resolvedModule();
     if (!module) return;
     this.personalization.setModulePersonalization(module.code, {
       interested
@@ -51,7 +73,7 @@ export class ModuleDialogComponent {
   }
 
   public updateDone(done: boolean) {
-    const module = this.dialog.moduleDialogData()?.module;
+    const module = this.resolvedModule();
     if (!module) return;
     this.personalization.setModulePersonalization(module.code, {
       done
@@ -60,5 +82,23 @@ export class ModuleDialogComponent {
 
   closeDialog() {
     this.dialog.moduleDialogData()?.resolve();
+  }
+
+  getLinkedModule() {
+    const code = this.modulePlanPersonalizationData()?.linkedModule;
+    if (!code) {
+      return undefined
+    }
+    return moduleMap.get(code);
+  }
+
+  assignModule() {
+    const module = prompt("Wie heisst das Modul?");
+    const semesterIndex = this.dialog.moduleDialogData()?.semesterIndex;
+    const moduleIndex = this.dialog.moduleDialogData()?.moduleIndex;
+
+    if (module === null || semesterIndex === undefined || moduleIndex === undefined) return;
+    this.personalization.setModulePlanPersonalization(this.personalization.getDegreeProgram(), semesterIndex, moduleIndex, module);
+    this.closeDialog();
   }
 }

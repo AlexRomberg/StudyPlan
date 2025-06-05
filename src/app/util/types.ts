@@ -26,4 +26,13 @@ export interface ModulePersonalization {
     interested: boolean;
 }
 
+export type ModulePlanPersonalization = {
+    [key in degreeProgram]: ModulePlanPersonalizationItem[]
+}
+export interface ModulePlanPersonalizationItem {
+    semesterIndex: number;
+    moduleIndex: number;
+    linkedModule: string;
+}
+
 export type degreeProgram = "I-VZ" | "I-TZ";

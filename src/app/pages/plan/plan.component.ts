@@ -52,9 +52,20 @@ export class PlanComponent {
     return personalization?.done ?? false;
   }
 
-  selectModule(module: ModuleDefinition | undefined) {
-    if (!module || module.isGenericModule) { return; }
+  selectModule(module: ModuleDefinition | undefined, semesterIndex: number | undefined, moduleIndex: number | undefined) {
+    if (!module) { return; }
 
-    this.dialog.openDialog(module);
+    this.dialog.openDialog(module, semesterIndex, moduleIndex);
+  }
+
+  resolveModule(module: ModuleDefinition, semesterIndex: number, moduleIndex: number) {
+    if (!module.isGenericModule) {
+      return { code: module.code, isPersonalized: false };
+    }
+    const personalization = this.personalization.getModulePlanPersonalization(this.personalization.getDegreeProgram(), semesterIndex, moduleIndex);
+    if (!personalization) {
+      return { code: module.code, isPersonalized: false };
+    }
+    return { code: personalization.linkedModule, isPersonalized: true };
   }
 }

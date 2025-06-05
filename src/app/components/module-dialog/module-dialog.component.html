@@ -1,37 +1,54 @@
 <div class="fixed top-0 left-0 min-w-full min-h-full flex items-center justify-center overflow-auto bg-zinc-950/50" (click)="closeDialog()">
     <div class="p-8 w-200 max-w-lvw min-h bg-zinc-800/70 shadow-md shadow-black/50 backdrop-blur-lg rounded-xl" (click)="$event.stopPropagation();">
         <span class="flex items-start justify-between mb-4">
+            @if (dialog.moduleDialogData()?.module?.isGenericModule && modulePlanPersonalizationData()) {
             <div>
-                <h1 class="text-3xl font-bold">{{this.dialog.moduleDialogData()?.module?.code}}</h1>
+                <h1 class="text-3xl font-bold flex items-end gap-4">{{modulePlanPersonalizationData()?.linkedModule}} <p class="text-sm text-zinc-400">({{dialog.moduleDialogData()?.module?.code}})</p>
+                </h1>
+                <p class="text-lg mb-2 text-zinc-400" [class.text-handwritten]="!getLinkedModule()">{{getLinkedModule() ? getLinkedModule()!.name : 'Dies ist ein eigenes Modul'}}</p>
+            </div>
+            } @else {
+            <div>
+                <h1 class="text-3xl font-bold">{{dialog.moduleDialogData()?.module?.code}}</h1>
                 <p class="text-lg mb-2 text-zinc-400">{{dialog.moduleDialogData()?.module?.name}}</p>
             </div>
-            <button (click)="closeDialog()" class="text-zinc-400 hover:text-zinc-200 transition-colors p-2 hover:bg-zinc-700 rounded-lg">
-                <lucide-icon name="x" />
-            </button>
+            }
+            <span class="flex gap-2">
+                @if (dialog.moduleDialogData()?.module?.isGenericModule) {
+                <button (click)="assignModule()" class="text-zinc-400 hover:text-zinc-200 transition-colors p-2 hover:bg-zinc-700 rounded-lg icon-container">
+                    <lucide-icon name="pen" />
+                    Modul zuweisen
+                </button>
+                }
+                <button (click)="closeDialog()" class="text-zinc-400 hover:text-zinc-200 transition-colors p-2 hover:bg-zinc-700 rounded-lg">
+                    <lucide-icon name="x" />
+                </button>
+            </span>
         </span>
+        @if (resolvedModule()) {
         <div class="grid grid-cols-3 gap-2">
             <span class="icon-container" title="ECTS-Credits">
                 <lucide-icon name="award" class="mr-1" />
-                <p class="text-lg font-semibold">{{dialog.moduleDialogData()?.module?.credits}}</p>
+                <p class="text-lg font-semibold">{{resolvedModule()?.credits}}</p>
                 <p class="text-zinc-400 text-sm">Credits</p>
             </span>
             <span class="icon-container gap-4" title="Semesterdurchführung">
                 <lucide-icon name="sun-snow" />
-                <p class="text-lg font-semibold" title="HS = Herbstsemester, FS = Frühlingssemester">{{dialog.moduleDialogData()?.module?.semester ?? '-'}}</p>
+                <p class="text-lg font-semibold" title="HS = Herbstsemester, FS = Frühlingssemester">{{resolvedModule()?.semester ?? '-'}}</p>
             </span>
             <span class="icon-container gap-4" title="Modulverantwortliche/-r">
                 <lucide-icon name="user-round" />
-                <p class="text-lg font-semibold">{{dialog.moduleDialogData()?.module?.lecturer ?? '-'}}</p>
+                <p class="text-lg font-semibold">{{resolvedModule()?.lecturer ?? '-'}}</p>
             </span>
             <span class="icon-container gap-4" title="Unterrichtssprache">
                 <lucide-icon name="languages" />
-                <p class="text-lg font-semibold">{{dialog.moduleDialogData()?.module?.language ?? '-'}}</p>
+                <p class="text-lg font-semibold">{{resolvedModule()?.language ?? '-'}}</p>
             </span>
 
-            @if (dialog.moduleDialogData()?.module?.url) {
+            @if (resolvedModule()?.url) {
             <span class="icon-container gap-4">
                 <lucide-icon name="file-text" />
-                <a class="text-lg font-semibold icon-container" [href]="dialog.moduleDialogData()?.module?.url" target="_blank">Modulbeschreibung <lucide-icon name="external-link" size="16" /></a>
+                <a class="text-lg font-semibold icon-container" [href]="resolvedModule()?.url" target="_blank">Modulbeschreibung <lucide-icon name="external-link" size="16" /></a>
             </span>
             }
             <a class="icon-container gap-2 self-end text-sm justify-self-end text-gray-400 translate-y-5 hover:bg-zinc-700/50 px-2 py-1 rounded-lg col-start-3 row-start-2" href="https://github.com/AlexRomberg/StudyPlan/issues/new?template=data_issue.yml" target="_blank">
@@ -63,5 +80,6 @@
             </span>
         </div>
         <span class="text-zinc-400 flex gap-2 mt-4 items-center text-sm"><lucide-icon name="lock" size="16" /> Anpassungen werden automatisch lokal gespeichert</span>
+        }
     </div>
 </div>
