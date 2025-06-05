@@ -1,6 +1,6 @@
-name: Issue with Data
+name: Data issue in the App
 description: Submit an issue with the data provided in the app. (Broken links, new modules, ...)
-title: "[Bug]: "
+title: "[Problem with module data]: "
 labels: ["bug"]
 assignees:
   - AlexRomberg
