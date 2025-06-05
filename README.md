@@ -1,6 +1,6 @@
 # HSLU - StudyPlan
 
-This project is an attempt to help students at the School of Computer Science and Information Technology Lucern to select there modules more efficiently.
+This project is an attempt to help students at the Lucerne University of Applied Sciences and Arts select there modules more efficiently.
 
 ## You want to use it
 
