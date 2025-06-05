@@ -1,0 +1,16 @@
+@reference '../../../styles.css';
+
+:host {
+    @apply bg-zinc-900 border-r-1 border-zinc-800 h-full grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.link-active {
+    &.link-active\:bg-zinc-800\/50 {
+        @apply bg-zinc-800/50;
+    }
+
+    & .link-active\:text-cyan-400 {
+        @apply text-cyan-400;
+    }
+}
