@@ -1,8 +1,9 @@
-<div class="w-full min-h-screen grid grid-cols-[13rem_1fr]">
-    <div>
-        <app-sidebar></app-sidebar>
-    </div>
-    <div>
-        <router-outlet></router-outlet>
+<div class="w-full min-h-lvh grid grid-cols-[13rem_1fr] max-w-lvw overflow-x-hidden" [class.overflow-hidden]="isDialogOpen()">
+    <app-sidebar />
+    <div class="max-h-lvh overflow-y-auto">
+        <router-outlet />
     </div>
 </div>
+@if(isDialogOpen()) {
+<app-module-dialog />
+}

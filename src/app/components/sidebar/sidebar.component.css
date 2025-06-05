@@ -1,7 +1,7 @@
 @reference '../../../styles.css';
 
 :host {
-    @apply bg-zinc-900 border-r-1 border-zinc-800 h-full grid;
+    @apply bg-zinc-900 border-r-1 border-zinc-800 h-lvh grid;
     grid-template-rows: auto 1fr auto;
 }
 

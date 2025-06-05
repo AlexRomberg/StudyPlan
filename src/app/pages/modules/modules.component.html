@@ -7,22 +7,26 @@
 <hr class="border-zinc-700 mx-8" />
 }
 <div class="flex flex-col px-8 py-4 gap-2">
-    <button class="flex justify-between items-center" (click)="toggleModuleGroup(moduleGroup.key)">
+    <button class="flex justify-between items-center cursor-pointer" (click)="toggleModuleGroup(moduleGroup.key)">
         <h2 class="text-2xl">{{moduleGroup.name}}</h2>
         <lucide-icon [name]="modulesOpen()[moduleGroup.key]?'chevron-up':'chevron-down'" size="20" class="text-zinc-400 mr-1" />
     </button>
     @if (modulesOpen()[moduleGroup.key]) {
     @for (module of modules()[moduleGroup.key]; track $index) {
-    <div class="bg-zinc-800 p-4 rounded-lg grid grid-cols-[8rem_1fr_6rem_6rem_10rem] gap-2 items-center">
+    <button class="bg-zinc-800 p-4 rounded-lg grid grid-cols-[8rem_1fr_8rem_6rem_10rem] gap-2 items-center text-left cursor-pointer" (click)="openModule(module)">
         <p>{{ module.code }}</p>
-        <h2 class="italic">{{ module.name }}</h2>
-        <select class="bg-green-700 rounded-full px-4 py-1" title="Semester">
-            <b class="text-lg text-zinc-100">test</b>
-            <option value="done">Besucht</option>
-        </select>
+        <p>{{ module.name }}</p>
+        <div>
+            @if (isCredited(module)) {
+            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="check" size="16" /> Angerechnet</p>
+            }@else if (isDone(module)) {
+            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="circle-check" size="16" /> Done</p> }
+            @else if (isInterested(module)) {
+            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="star" size="16" /> Interesse</p> }
+        </div>
         <p class="text-sm icon-container text-zinc-400" title="ECTS-Credits"><lucide-icon name="award" /><b class="text-lg text-zinc-100">{{ module.credits }}</b> Credits</p>
         <a [href]="module.url" class="icon-container ml-2 hover:bg-zinc-700 rounded-md p-2">Modulbeschrieb <lucide-icon name="external-link" size="16" /></a>
-    </div>
+    </button>
     }
     }
 </div>

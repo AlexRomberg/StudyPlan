@@ -5,6 +5,7 @@
   font-style: normal;
   font-weight: 400 700;
   font-display: swap;
+  size-adjust: 150%;
   src: url(/fonts/caveat.woff2) format('woff2');
 }
 @font-face {

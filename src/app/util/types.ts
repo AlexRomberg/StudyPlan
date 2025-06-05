@@ -10,7 +10,20 @@ export interface ModuleDefinition {
     name: string
     credits: number,
     url: string | null,
-    type: string
+    type: string,
+    isGenericModule: boolean,
+    // TODO: The following properties are still missing
+    semester: string | null,
+    lecturer: string | null,
+    language: string | null,
 }
 
-export type degreeProgram = "I-VZ" | "I-TZ" | "AI-VZ" | "AI-TZ";
+export interface ModulePersonalization {
+    code: string;
+    notes: string;
+    credited: boolean;
+    done: boolean;
+    interested: boolean;
+}
+
+export type degreeProgram = "I-VZ" | "I-TZ";

@@ -1,0 +1,10 @@
+@reference '../../../styles.css';
+
+:host {
+    max-width: calc(100lvw - 13rem);
+    @apply block;
+}
+
+.w-full-container {
+    max-width: calc(100lvw - 13rem - var(--spacing) * 16);
+}

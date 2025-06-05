@@ -1,0 +1,67 @@
+<div class="fixed top-0 left-0 min-w-full min-h-full flex items-center justify-center overflow-auto bg-zinc-950/50" (click)="closeDialog()">
+    <div class="p-8 w-200 max-w-lvw min-h bg-zinc-800/70 shadow-md shadow-black/50 backdrop-blur-lg rounded-xl" (click)="$event.stopPropagation();">
+        <span class="flex items-start justify-between mb-4">
+            <div>
+                <h1 class="text-3xl font-bold">{{this.dialog.moduleDialogData()?.module?.code}}</h1>
+                <p class="text-lg mb-2 text-zinc-400">{{dialog.moduleDialogData()?.module?.name}}</p>
+            </div>
+            <button (click)="closeDialog()" class="text-zinc-400 hover:text-zinc-200 transition-colors p-2 hover:bg-zinc-700 rounded-lg">
+                <lucide-icon name="x" />
+            </button>
+        </span>
+        <div class="grid grid-cols-3 gap-2">
+            <span class="icon-container" title="ECTS-Credits">
+                <lucide-icon name="award" class="mr-1" />
+                <p class="text-lg font-semibold">{{dialog.moduleDialogData()?.module?.credits}}</p>
+                <p class="text-zinc-400 text-sm">Credits</p>
+            </span>
+            <span class="icon-container gap-4" title="Semesterdurchführung">
+                <lucide-icon name="sun-snow" />
+                <p class="text-lg font-semibold" title="HS = Herbstsemester, FS = Frühlingssemester">{{dialog.moduleDialogData()?.module?.semester ?? '-'}}</p>
+            </span>
+            <span class="icon-container gap-4" title="Modulverantwortliche/-r">
+                <lucide-icon name="user-round" />
+                <p class="text-lg font-semibold">{{dialog.moduleDialogData()?.module?.lecturer ?? '-'}}</p>
+            </span>
+            <span class="icon-container gap-4" title="Unterrichtssprache">
+                <lucide-icon name="languages" />
+                <p class="text-lg font-semibold">{{dialog.moduleDialogData()?.module?.language ?? '-'}}</p>
+            </span>
+
+            @if (dialog.moduleDialogData()?.module?.url) {
+            <span class="icon-container gap-4">
+                <lucide-icon name="file-text" />
+                <a class="text-lg font-semibold icon-container" [href]="dialog.moduleDialogData()?.module?.url" target="_blank">Modulbeschreibung <lucide-icon name="external-link" size="16" /></a>
+            </span>
+            }
+            <a class="icon-container gap-2 self-end text-sm justify-self-end text-gray-400 translate-y-5 hover:bg-zinc-700/50 px-2 py-1 rounded-lg col-start-3 row-start-2" href="https://github.com/AlexRomberg/StudyPlan/issues/new?template=data_issue.yml" target="_blank">
+                <lucide-icon name="message-circle-warning" size="16" />
+                Problem melden
+            </a>
+        </div>
+        <hr class="my-8 border-zinc-600">
+        <div class="flex flex-col gap-2">
+            <span class="flex gap-4 mb-4">
+                <p class="text-3xl font-semibold text-handwritten">Anpassungen</p>
+                <p class="icon-container text-xs text-zinc-400 self-end fade">
+                    <lucide-icon name="info" size="16" />
+                    Alle persönlichen Anpassungen werden durch mit diese Schriftart markiert.
+                </p>
+            </span><span class="flex gap-2">
+                <input id="credited" type="checkbox" class="w-4" [ngModel]="personalizationData()?.credited" (ngModelChange)="updateCredited($event)" />
+                <label for="credited" class="text-handwritten cursor-pointer">Angerechnet / Gestrichen</label>
+            </span><span class="flex gap-2">
+                <input id="done" type="checkbox" class="w-4" [ngModel]="personalizationData()?.done" (ngModelChange)="updateDone($event)" />
+                <label for="done" class="text-handwritten cursor-pointer">Abgeschlossen</label>
+            </span><span class="flex gap-2">
+                <input id="interested" type="checkbox" class="w-4" [ngModel]="personalizationData()?.interested" (ngModelChange)="updateInterested($event)" />
+                <label for="interested" class="text-handwritten cursor-pointer">Interesse</label>
+            </span>
+            <span class="mt-2">
+                <label for="notes" class="text-handwritten">Notizen</label>
+                <textarea id="notes" class="w-full h-32 p-2 bg-zinc-700/50 rounded-lg text-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-600 resize-none placeholder:text-zinc-400" placeholder="Hier kannst du Notizen zum Modul machen." [ngModel]="personalizationData()?.notes" (ngModelChange)="updateNotes($event)"></textarea>
+            </span>
+        </div>
+        <span class="text-zinc-400 flex gap-2 mt-4 items-center text-sm"><lucide-icon name="lock" size="16" /> Anpassungen werden automatisch lokal gespeichert</span>
+    </div>
+</div>

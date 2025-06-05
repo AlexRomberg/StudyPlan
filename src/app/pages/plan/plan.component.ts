@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { moduleMap, plans } from '../../models/moduleplans';
 import { degreeProgram, ModuleDefinition } from '../../util/types';
 import { PersonalizationService } from '../../services/personalization.service';
+import { DialogService } from '../../services/dialog.service';
 
 @Component({
   selector: 'app-plan',
@@ -13,9 +14,10 @@ import { PersonalizationService } from '../../services/personalization.service';
 })
 export class PlanComponent {
   private personalization = inject(PersonalizationService);
+  private dialog = inject(DialogService);
+
   public selectedDegreeProgram = signal<degreeProgram>(this.personalization.getDegreeProgram());
   public selectedModulePlan = computed(() => plans[this.selectedDegreeProgram()]);
-  public selectedModule = signal<ModuleDefinition | undefined>(undefined);
 
   constructor() {
     effect(() => { this.personalization.setDegreeProgram(this.selectedDegreeProgram()); });
@@ -25,21 +27,34 @@ export class PlanComponent {
     return codes.map(value => moduleMap.get(value));
   }
 
-  public getMouleStyling(module: ModuleDefinition) {
+  public getModuleStyling(module: ModuleDefinition) {
     const colorClasses = {
       core: "bg-cyan-700",
       project: "bg-orange-700",
       elective: "bg-green-700",
       major: "bg-green-600",
+      work: "bg-purple-700",
     };
 
     return [
       ["col-span-1", "col-span-2", "col-span-3", "col-span-4"][Math.floor(module.credits / 3) - 1],
-      colorClasses[module.type as keyof typeof colorClasses] ?? "bg-gray-600",
+      colorClasses[module.type as keyof typeof colorClasses] ?? "bg-zinc-700",
     ]
   }
 
+  isCredited(module: ModuleDefinition): boolean {
+    const personalization = this.personalization.getModulePersonalization(module.code);
+    return personalization?.credited ?? false;
+  }
+
+  isDone(module: ModuleDefinition): boolean {
+    const personalization = this.personalization.getModulePersonalization(module.code);
+    return personalization?.done ?? false;
+  }
+
   selectModule(module: ModuleDefinition | undefined) {
-    this.selectedModule.set(module);
+    if (!module || module.isGenericModule) { return; }
+
+    this.dialog.openDialog(module);
   }
 }

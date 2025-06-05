@@ -1,47 +1,57 @@
-<div class="p-8">
+<div class="p-8 overflow-x-hidden">
     <h1 class="text-3xl mb-4 font-bold">Planung</h1>
     <span class="flex items-center text-zinc-400">
         <label class="text-lg mr-4">Modulplan:</label>
         <select class="text-lg p-4 pl-0" [(ngModel)]="selectedDegreeProgram">
             <option value="I-VZ">Informatik VZ</option>
             <option value="I-TZ">Informatik TZ</option>
-            <option value="AI-VZ">AI/ML VZ</option>
-            <option value="AI-TZ">AI/ML TZ</option>
         </select>
     </span>
-    <div class="grid grid-cols-11 gap-1" [style.gridTemplateRows]="`repeat(${selectedModulePlan().length}, 4rem)`">
-        @for (semester of selectedModulePlan(); track $index) {
-        <div class="col-1 content-center">
-            <p>{{selectedModulePlan().length - $index}}. Semester</p>
+    <div class="w-full-container overflow-x-auto">
+        <div class="grid grid-cols-11 gap-1 min-w-4xl" [style.gridTemplateRows]="`repeat(${selectedModulePlan().length}, 4rem)`">
+            @for (semester of selectedModulePlan(); track $index) {
+            <div class="col-1 content-center whitespace-nowrap px-2">
+                <p class="xl:hidden">{{selectedModulePlan().length - $index}}. Sem.</p>
+                <p class="max-xl:hidden">{{selectedModulePlan().length - $index}}. Semester</p>
+            </div>
+            @for (module of asModules(semester); track $index) {
+            @if (module) {
+            <button [class]="getModuleStyling(module)" class="text-sm rounded-lg content-center text-center cursor-pointer" [class.opacity-60]="isCredited(module)" [title]="module.name" (click)="selectModule(module)">
+                <p [class.text-zinc-400]="isCredited(module)">{{module.code}}</p>
+                @if (isCredited(module)) {
+                <p class="text-zinc-100 text-handwritten text-xs">Angerechnet</p>
+                } @else if (isDone(module)) {
+                <p class="text-zinc-100 text-handwritten text-xs icon-container justify-center gap-1"><lucide-icon name="circle-check" size="16" /> Abgeschlossen</p>
+                }
+            </button>
+            } @else {
+            <div class="text-sm rounded-lg content-center text-center cursor-pointer bg-zinc-700">
+                <p>{{semester[$index]}}</p>
+                <i>Unknown</i>
+            </div>
+            }}}
         </div>
-        @for (module of asModules(semester); track $index) {
-        @if (module) {
-        <button [class]="getMouleStyling(module)" class="text-sm rounded-lg content-center text-center cursor-pointer" [title]="module.name" (click)="selectModule(module)">
-            <p>{{module.code}}</p>
-        </button>
-        } @else {
-        <div class="text-sm rounded-lg content-center text-center cursor-pointer bg-zinc-200">
-            <p>{{module}} - Deprecated</p>
-        </div>
-        }}}
     </div>
-    <div class="bg-zinc-800 p-4 pt-2 rounded-lg mt-4">
-        <p class="text-lg mb-2 icon-container"><lucide-icon name="info" size="18" /> Legende</p>
-        <span class="flex items-center gap-2">
-            <span class="w-6 h-3 block rounded-full bg-cyan-700"></span>
+    <div class="p-4 pt-2 rounded-lg mt-4 text-zinc-400 flex gap-6 items-center">
+        <span class="flex items-center gap-2 text-sm">
+            <span class="w-4 h-2 block rounded-full bg-cyan-700"></span>
             <p>Kern-Module</p>
         </span>
-        <span class="flex items-center gap-2">
-            <span class="w-6 h-3 block rounded-full bg-orange-700"></span>
+        <span class="flex items-center gap-2 text-sm">
+            <span class="w-4 h-2 block rounded-full bg-orange-700"></span>
             <p>Projekt-Module</p>
         </span>
-        <span class="flex items-center gap-2">
-            <span class="w-6 h-3 block rounded-full bg-green-700"></span>
+        <span class="flex items-center gap-2 text-sm">
+            <span class="w-4 h-2 block rounded-full bg-green-700"></span>
             <p>Wahl-Module</p>
         </span>
-        <span class="flex items-center gap-2">
-            <span class="w-6 h-3 block rounded-full bg-green-600"></span>
+        <span class="flex items-center gap-2 text-sm">
+            <span class="w-4 h-2 block rounded-full bg-green-600"></span>
             <p>Major-Module</p>
+        </span>
+        <span class="flex items-center gap-2 text-sm">
+            <span class="w-4 h-2 block rounded-full bg-purple-700"></span>
+            <p>Anrechnung Berufstätigkeit</p>
         </span>
     </div>
 </div>

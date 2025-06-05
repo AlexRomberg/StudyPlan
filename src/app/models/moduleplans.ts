@@ -74,15 +74,77 @@ const I_VZ: string[][] = [
     ],
 ];
 
-const I_TZ: string[][] = [];
-
-const AI_VZ: string[][] = [];
-
-const AI_TZ: string[][] = [];
+const I_TZ: string[][] = [
+    /* semester 8 */
+    [
+        "Major-Modul",
+        "Major-Modul",
+        "Major-Modul",
+        "BAA",
+    ],
+    /* semester 7 */
+    [
+        "Major-Modul",
+        "Major-Modul",
+        "Major-Modul",
+        "Wahl-Modul",
+        "Anrechnung Berufstätigkeit",
+        "WIPRO",
+    ],
+    /* semester 6 */
+    [
+        "Major-Modul",
+        "Wahl-Modul",
+        "Wahl-Modul",
+        "Wahl-Modul",
+        "Anrechnung Berufstätigkeit",
+        "PREN2",
+    ],
+    /* semester 5 */
+    [
+        "Major-Modul",
+        "Wahl-Modul",
+        "SWDA",
+        "Anrechnung Berufstätigkeit",
+        "PREN1",
+    ],
+    /* semester 4 */
+    [
+        "DBS",
+        "VSK",
+        "ASTAT",
+        "Wahl-Modul",
+        "Wahl-Modul",
+        "Wahl-Modul",
+    ],
+    /* semester 3 */
+    [
+        "ANA-F",
+        "DMATH-CODE",
+        "ITEO",
+        "ISF",
+        "MOD",
+        "Wahl-Modul",
+    ],
+    /* semester 2 */
+    [
+        "CNA",
+        "AD",
+        "Wahl-Modul",
+        "FKOM",
+        "PMB"
+    ],
+    /* semester 1 */
+    [
+        "ANA-G",
+        "DMATH-ALGO",
+        "OOP",
+        "Wahl-Modul",
+        "PTA"
+    ]
+];
 
 export const plans: { [key in degreeProgram]: string[][] } = {
     "I-VZ": I_VZ,
-    "I-TZ": I_TZ,
-    "AI-VZ": AI_VZ,
-    "AI-TZ": AI_TZ
+    "I-TZ": I_TZ
 }
