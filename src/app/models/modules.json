@@ -7,7 +7,7 @@
         "type": "elective",
         "semester": null,
         "lecturer": null,
-        "language": null,
+        "language": "Deutsch",
         "isGenericModule": true
     },
     {
@@ -18,7 +18,7 @@
         "type": "major",
         "semester": null,
         "lecturer": null,
-        "language": null,
+        "language": "Deutsch",
         "isGenericModule": true
     },
     {
@@ -29,7 +29,7 @@
         "type": "work",
         "semester": null,
         "lecturer": null,
-        "language": null,
+        "language": "Deutsch",
         "isGenericModule": true
     },
     {
@@ -38,9 +38,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-algorithmen-und-datenstrukturen.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Baetge Ingmar",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -49,9 +49,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-grundlagen-der-analysis.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Wirth Joachim",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -60,9 +60,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/fortgeschrittene-analysis.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Wirth Joachim",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -71,9 +71,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-computer-and-network-architecture-2023-10-25.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Waldmann Markus",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -82,9 +82,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-diskrete-mathematik-fuer-datenstrukturen-und-algorithmen.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Berger Reto",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -93,9 +93,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-diskrete-mathematik-fuer-datenverschluesselung-und-datenkodierung.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Berger Reto",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -104,9 +104,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/information-security-fundamentals.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Hänggi Esther",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -115,9 +115,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-it-system-engineering-and-operation-2022-01-26.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Waldmann Markus",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -126,9 +126,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-modellierung-grundlagen.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Sollberger Peter",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -137,9 +137,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-objektorientierte-programmierung.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Gisler Roland",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -148,9 +148,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-programmier-labor.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Arnold Ruedi",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -159,9 +159,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-applied-statistics-for-data-science.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Berger Reto",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -170,20 +170,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-datenbanksysteme.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
-        "isGenericModule": false
-    },
-    {
-        "code": "PMRE",
-        "name": "Projektmanagement & Requirements Engineering",
-        "credits": 3,
-        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/projektmanagement-requirements-engineering.pdf",
-        "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Kaufmann Michael",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -192,9 +181,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-software-development-and-architecture.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Gisler Roland",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -203,42 +192,42 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-verteilte-systeme-komponenten.pdf",
         "type": "core",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Bättig Martin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "PTA",
         "name": "Projekt und Teamarbeit",
         "credits": 6,
-        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/projekt-und-teamarbeit.pdf",
+        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi-c16/projekt-und-teamarbeit.pdf/",
         "type": "project",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Klotz Ute",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "FKOM",
         "name": "Fachkommunikation",
         "credits": 3,
-        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/fachkommunikation.pdf",
+        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi-c16/fachkommunikation.pdf/",
         "type": "project",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Albert Daniel",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "PMB",
-        "name": "Project Management Basics",
+        "name": "Projektmanagement Basics",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-project-management-basics.pdf",
         "type": "project",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Sollberger Peter",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -247,9 +236,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ta/t-produktentwicklung-1.pdf",
         "type": "project",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Haack Carsten",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -258,42 +247,42 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ta/t-produktentwicklung-2.pdf",
         "type": "project",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Haack Carsten",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "WIPRO",
         "name": "Wirtschaftsprojekt",
         "credits": 6,
-        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/wirtschaftsprojekt.pdf",
+        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi-c16/wirtschaftsprojekt.pdf/",
         "type": "project",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Gilbert Oliver",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "BAA",
-        "name": "Bachelorarbeit",
+        "name": "Bachelordiplomarbeit",
         "credits": 12,
-        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/bachelorarbeit.pdf",
+        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi-c16/bachelorarbeit.pdf/",
         "type": "project",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Meier René",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "ACBA",
         "name": "Accounting Basics",
         "credits": 3,
-        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/accounting-basics.pdf",
+        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi-c16/accounting-basics.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Gysler Thomas",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -302,9 +291,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ta/t-advanced-embedded-systems.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Styger Erich",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -313,9 +302,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-advanced-game-development.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Thomas André",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -324,9 +313,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/advanced-machine-learning.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Pouly Marc",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -335,9 +324,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/advanced-penetration-testing.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Punz Thomas",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -346,9 +335,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/blockwochen/ai-for-healthcare-guest-lectures.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Lionetti Simone",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -357,9 +346,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/ai-generated-art-und-digital-creativity.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Massol Guillaume",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -368,9 +357,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/ai-robotics-challenge.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Koehler Jana",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -379,9 +368,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/blockwochen/ai-robotics-week.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Jensen Björn",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -390,9 +379,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ta/t-angewandte-industrielle-robotik.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Koller Adrian",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -401,9 +390,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/angewandte-mathematik-fuer-fortgeschrittene.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Locher Marc",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -412,20 +401,20 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/angewandte-statistik-fuer-fortgeschrittene.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Locher Marc",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "AMLMED",
-        "name": "Applications of Machine Learning",
+        "name": "Applications of Machine Learning in Medicine",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/blockwochen/applications-of-machine-learning-in-medicine.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Lionetti Simone",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -434,9 +423,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-artificial-intelligence-search-and-optimization-2023-06-06.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Pouly Marc",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -445,9 +434,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-augmented-reality-2021-12-07.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Smolic Aljosa",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -456,9 +445,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-betriebswirtschaft-im-digitalen-umfeld-2021-11-25.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Hunziker Stefan",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -467,9 +456,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/big-data-lab-cluster.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Egli Frederick",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -478,9 +467,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/blockwochen/big-data-lab-sandbox.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Ricchizzi Nino",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -489,9 +478,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-big-data-management.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Ricchizzi Nino",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -500,9 +489,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-blockchain.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Denzler Alexander",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -511,9 +500,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-blockchain-and-iot-hackathon-2021-12-08.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Weingärtner Tim",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -522,9 +511,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/business-intelligence-and-decision-support-bids.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Christen Ramon",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -533,9 +522,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-csharp-in-action-2022-03-14.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Diehl Roger",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -544,9 +533,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/change-management.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Zemp Simon",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -555,9 +544,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-cloud-infrastructure-2021-11-25.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Waldmann Markus",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -566,9 +555,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-cloud-programming-lab-2023-10-25.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Imsand Matthias",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -577,9 +566,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/cloud-security.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Hassanein Sami",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -588,9 +577,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-cloud-services-angebot-und-betrieb-2021-11-25.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Waldmann Markus",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -599,9 +588,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-cloud-technonogy.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Waldmann Markus",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -610,9 +599,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-compilerbau-2024-03-06.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Bättig Martin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -621,9 +610,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-computer-graphics.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Smolic Aljosa",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -632,9 +621,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/crises-recovery-strategies.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Porath Ron",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -643,9 +632,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-cognitive-robotics-lab-2024-01-12.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Herzog Florian",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -654,9 +643,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/computer-vision-ai.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Koller Thomas",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -665,9 +654,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/cyber-defence.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Obermeier Sebastian",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -676,9 +665,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/data-science-basics.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Mazzola Luca",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -687,9 +676,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/data-warehousing.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Sascha Roth",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -698,20 +687,20 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/datenvisualisierung.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Zwimpfer Victor",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "DSO",
-        "name": "Datenschutz in Organisation",
+        "name": "Datenschutz in Organisationen",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/datenschutz-in-organisation.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Kuhn André",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -720,9 +709,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-deep-learning-for-games.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Koller Thomas",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -731,20 +720,20 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-devops.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Gisler Roland",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "DEFI",
-        "name": "Dezentralized Finance",
+        "name": "Decentralized Finance",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-decentralized-finance-2023-11-23.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Gervais Arthur",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -753,9 +742,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/digitale-transformation-in-der-industrie.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Styger Erich",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -764,9 +753,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ta/t-echzeit-bildverarbeitung.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Prof. Dr. Zahn Klaus",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -775,9 +764,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/enterprise-and-application-landscape-architecture.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Liver Beat",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -786,9 +775,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-enterprise-programming-lab-2022-11-29.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Stangenberg Thorben",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -797,9 +786,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-entwurf-und-analyse-randomisierter-verfahren-20240430.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Berger Reto",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -808,9 +797,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/from-nand-to-tetris.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Berger Reto",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -819,9 +808,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/functional-safety-and-secure-software-architecture.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Krini Ossmane",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -830,9 +819,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-fundamentals-in-information-theory-2024-04-30.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Arnold Dieter",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -841,9 +830,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-game-design-2024-04-30.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Spoerri Reto",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -852,9 +841,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-game-development-2024-05-22.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Egli Frederick",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -863,9 +852,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/game-theory.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Caro Gregoire",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -874,9 +863,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-geographic-information-systems-2020-12-29.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Dr. Halldór Janetzko",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -885,9 +874,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/geschftsprozesse-und-organisation.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Wyss Markus",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -896,9 +885,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ta/t-hoehere-mathematik.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Peter Scheiblechner",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -907,9 +896,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-human-centered-design-2024-05-28.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Egli Armin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -918,20 +907,20 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-human-centered-design-extended-2024-03-30.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Egli Armin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "HFD",
-        "name": "Human Factors & Design",
+        "name": "Human Factors & Design ",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-human-factors-and-design-2024-04-30.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Uhr Marcel",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -940,9 +929,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-human-robot-interaction-20240626.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Herzog Florian",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -951,9 +940,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-image-processing-and-computer-vision.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Koller Thomas",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -962,31 +951,31 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/immersive-labs.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Porath Ron",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "IMATH",
-        "name": "Informatik Mathematik",
+        "name": "Nichtlineare Optimierung und Differentialgleichungen in der Informatik",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-informatik-mathematik.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Berger Reto",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "ITIA",
-        "name": "Infrastructure Automation",
+        "name": "IT Infrastructure Automation",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/it-infrastructure-automation.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Wamser Florian",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -995,9 +984,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-interaction-for-virtual-reality.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Zank Markus",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1006,9 +995,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-introduction-to-nlp.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Mazzola Luca",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1017,20 +1006,20 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-internet-of-things.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Nicoara Angela",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
         "code": "IOPT",
-        "name": "Industrial Optimisation",
+        "name": "Industrial Optimization",
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/industrial-optimization.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Bürgy Reinhard",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1039,9 +1028,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/informationssicherheitslabor.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Renggli Stephan",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1050,9 +1039,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/information-security-management.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Bücherl Matthias",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1061,9 +1050,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/interaction-design-27-11-2024.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Egli Armin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1072,9 +1061,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/introduction-to-quantum-computing-2023-11-23.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Hänggi Esther",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1083,9 +1072,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/iot-edge-and-cloud-computing-technologies.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Nicoara Angela",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1094,9 +1083,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/it-recht.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Uttinger Ursula",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1105,9 +1094,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/knowledge-representation-reasoning.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Koehler Jana",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1116,9 +1105,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/kryptologie-und-anwendungen.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Schuler Josef",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1127,9 +1116,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/lineare-algebra.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Wirth Joachim",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1138,9 +1127,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/linux-os.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Wamser Florian",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1149,9 +1138,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/machine-learning.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Pouly Marc",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1160,9 +1149,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/machine-learning-operations.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Marfurt Andreas",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1171,9 +1160,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-mainframe-topics.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Tschumi Heinz",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1182,31 +1171,31 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/blockwochen/make-the-invisible-visible.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Minder Bettina",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
         "code": "MAGA",
-        "name": "Management Game",
+        "name": "Management-Game",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/blockwochen/management-game.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Emmenegger Benjamin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "COACH",
-        "name": "Mathematik und Programmieren für Erfolg im Studium",
+        "name": "SmartStart: Mathematik und Programmierung für Erfolg im Studium",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-mathematik-und-programmieren-fuer-erfolg-im-studium.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Kuster Natalie",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1215,9 +1204,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ta/t-mathematik-und-physik-technik-1.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Lüönd Felix",
+        "language": "Deutsch / Englisch",
         "isGenericModule": false
     },
     {
@@ -1226,9 +1215,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ta/t-medizintechnik-einfuehrung.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Prof. Dr. Silvio Di Nardo",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1237,9 +1226,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-microcontroller-2023-10-07.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Sollberger Peter",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1248,9 +1237,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/mobile-security.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Ricchizzi Nino",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1259,9 +1248,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-mobile-programming-lab.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Arnold Ruedi",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1270,20 +1259,20 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-mobile-programming.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Arnold Ruedi",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "3DMOD4RT",
-        "name": "3D Modellieren für Echtzeitanwendungen",
+        "name": "3D Modelling for Real-Time Applications ",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-imtec/3d-modellieren-fuer-echtzeitanwendungen-h24-20240507.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Zank Markus",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1292,9 +1281,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-nachhaltigkeit-und-it.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Vogel Martin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1303,20 +1292,20 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/networking-1.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Odermatt Werner",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "NETW2",
-        "name": "Networking 2",
+        "name": "Networking & CCNA 2",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/networking-2.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Röthlisberger Urs",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1325,9 +1314,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/networking-3.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Eskhita Radwan",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1347,9 +1336,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-praxis-im-vollzeit-teilzeitstudium.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Diethelm Hansjörg",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1358,9 +1347,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-programmieren-fuer-ios.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Arnold Ruedi",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1369,9 +1358,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-programming-concepts-and-paradigms.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Arnold Ruedi",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1380,20 +1369,20 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-raytracing-von-grund-auf.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Porath Ron",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "REUF",
-        "name": "Recht für Unternehmensführung",
+        "name": "Recht in der Unternehmensführung",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/recht-in-der-unternehmensfuehrung.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Uttinger Ursula",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1402,9 +1391,9 @@
         "credits": 6,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/reinforcement-learning.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Koller Thomas",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1413,9 +1402,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/secure-iot.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Nicoara Angela",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1424,9 +1413,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-software-architecture-and-techniques.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Junghans Alexandra",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1435,9 +1424,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-software-testing-2022-03-23.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Portmann Dominique",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1446,9 +1435,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/time-series-analysis.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Amruthalingam Ludovic",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1457,9 +1446,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-user-centered-design-engineering-2021-11-26.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Zwimpfer Victor",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1468,9 +1457,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-user-research-und-testing-20240507.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Uhr Marcel",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1479,9 +1468,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/unternehmensgruendungen-in-digitalen-maerkten.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Zemp Simon",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1490,9 +1479,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-usability.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Egli Armin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1501,9 +1490,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-visual-interface-design.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Uhr Marcel",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1512,9 +1501,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-virtual-reality-technologies.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Zank Markus",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1523,9 +1512,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-web-programming-lab.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Witschard Dominik",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1534,9 +1523,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-web-technologien-2023-10-18.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Bättig Martin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1545,9 +1534,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-xml-and-json-technologies.pdf",
         "type": "extension",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Bäni Benjamin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1556,31 +1545,31 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/academic-english-ielts-preparation.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Hayden Catherine",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
         "code": "AEDCTO",
-        "name": "Advanced English Diploma Course TOEFL Preparation",
+        "name": "Academic English TOEFL Preparation",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/academic-english-toefl-preparation.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Von Rotz Tamara",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
         "code": "CAEPRO",
-        "name": "Cambridge Proficiency Preparation Course",
+        "name": "Cambridge Proficiency",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/cambridge-proficiency.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Hayden Catherine",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1589,9 +1578,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/die-kunst-der-finanzanlagen.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Kull Stefan",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1600,20 +1589,20 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/english-for-digital-business.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Von Rotz Tamara",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
         "code": "ENGFTD",
-        "name": "English for Future Technolgy Development",
+        "name": "English for Future Technology Development",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/english-for-future-technolgy-development.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Von Rotz Tamara",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1622,9 +1611,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/english-for-strategic-and-digital-communication.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Haymond Benjamin",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1633,9 +1622,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/english-for-technical-computer-science.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Haymond Benjamin",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1644,9 +1633,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-ics/ethik.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Klotz Ute",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1655,9 +1644,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/intercultural-competences.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Von Rotz Tamara",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1666,9 +1655,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/introduction-to-anglo-saxon-culture-politics-and-history.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Haymond Benjamin",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1677,9 +1666,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/introduction-to-asia-culture-politics-history.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Haymond Benjamin",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1688,9 +1677,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-international-school-for-computer-science-students.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Diethelm Hansjörg",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1699,9 +1688,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/blockwochen/international-summer-school-on-blockchain.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Weingärtner Tim",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1710,9 +1699,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-international-sustainability-summer-school.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Vogel Martin",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1721,9 +1710,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/professional-and-technical-communication.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Haymond Benjamin",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1732,9 +1721,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/social-media-storytelling.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Bigea Georgiana",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1743,9 +1732,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-social-project-2021-11-26.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Egli Frederick",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1754,9 +1743,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-summer-school-on-designing-serious-games.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Spoerri Reto",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1765,31 +1754,20 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/blockwochen/wissenschaftliches-schreiben-forschungsmethodik.pdf",
         "type": "additional",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Haymond Benjamin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "AMLMED",
-        "name": "Applications of Machine Learning",
+        "name": "Applications of Machine Learning in Medicine",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/blockwochen/applications-of-machine-learning-in-medicine.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
-        "isGenericModule": false
-    },
-    {
-        "code": "AIHLTH",
-        "name": "AI for Healthcare - Guest Lectures",
-        "credits": 3,
-        "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/blockwochen/ai-for-healthcare-guest-lectures.pdf",
-        "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Lionetti Simone",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1798,9 +1776,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-aiml/blockwochen/ai-robotics-week.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Jensen Björn",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1809,9 +1787,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/blockwochen/big-data-lab-sandbox.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Ricchizzi Nino",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1820,9 +1798,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-blockchain-and-iot-hackathon-2021-12-08.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Weingärtner Tim",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1831,9 +1809,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-cloud-programming-lab-2023-10-25.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Imsand Matthias",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1842,9 +1820,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-interaction-for-virtual-reality.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Zank Markus",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1853,9 +1831,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-international-school-for-computer-science-students.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Diethelm Hansjörg",
+        "language": "Englisch",
         "isGenericModule": false
     },
     {
@@ -1864,20 +1842,20 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-mainframe-topics.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "FS",
+        "lecturer": "Tschumi Heinz",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
         "code": "MAGA",
-        "name": "Management Game",
+        "name": "Management-Game",
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/blockwochen/management-game.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Emmenegger Benjamin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1886,9 +1864,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/i-web-programming-lab.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Witschard Dominik",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1897,9 +1875,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-wi/blockwochen/wissenschaftliches-schreiben-forschungsmethodik.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS / FS",
+        "lecturer": "Haymond Benjamin",
+        "language": "Deutsch",
         "isGenericModule": false
     },
     {
@@ -1908,9 +1886,9 @@
         "credits": 3,
         "url": "https://mycampus.hslu.ch/-/media/campus/common/files/dokumente/other/mycampus/i/dokumente-ausbildung/bachelor/modulbeschriebe-informatik/blockwochen/i-xml-and-json-technologies.pdf",
         "type": "blockweek",
-        "semester": null,
-        "lecturer": null,
-        "language": null,
+        "semester": "HS",
+        "lecturer": "Bäni Benjamin",
+        "language": "Deutsch",
         "isGenericModule": false
     }
 ]
