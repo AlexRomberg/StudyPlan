@@ -25,7 +25,7 @@
             <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="star" size="16" /> Interesse</p> }
         </div>
         <p class="text-sm icon-container text-zinc-400" title="ECTS-Credits"><lucide-icon name="award" /><b class="text-lg text-zinc-100">{{ module.credits }}</b> Credits</p>
-        <a [href]="module.url" class="icon-container ml-2 hover:bg-zinc-700 rounded-md p-2">Modulbeschrieb <lucide-icon name="external-link" size="16" /></a>
+        <a [href]="module.url" target="_blank" (click)="$event.stopPropagation()" class="icon-container ml-2 hover:bg-zinc-700 rounded-md p-2">Modulbeschrieb <lucide-icon name="external-link" size="16" /></a>
     </button>
     }
     }
