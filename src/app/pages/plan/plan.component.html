@@ -19,9 +19,9 @@
             <button [class]="getModuleStyling(module)" class="text-sm rounded-lg content-center text-center cursor-pointer" [class.opacity-60]="isCredited(module)" [title]="module.name" (click)="selectModule(module)">
                 <p [class.text-zinc-400]="isCredited(module)">{{module.code}}</p>
                 @if (isCredited(module)) {
-                <p class="text-zinc-100 text-handwritten text-xs">Angerechnet</p>
+                <p class="text-zinc-100 text-handwritten text-2xs">Angerechnet</p>
                 } @else if (isDone(module)) {
-                <p class="text-zinc-100 text-handwritten text-xs icon-container justify-center gap-1"><lucide-icon name="circle-check" size="16" /> Abgeschlossen</p>
+                <p class="text-zinc-100 text-handwritten text-2xs icon-container justify-center gap-0.5"><lucide-icon name="circle-check" size="12" /> Abgeschlossen</p>
                 }
             </button>
             } @else {

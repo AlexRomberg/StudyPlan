@@ -8,3 +8,7 @@
 .w-full-container {
     max-width: calc(100lvw - 13rem - var(--spacing) * 16);
 }
+
+.text-2xs {
+    font-size: 0.6rem;
+}
