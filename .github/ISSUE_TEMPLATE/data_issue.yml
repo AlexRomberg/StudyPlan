@@ -1,0 +1,27 @@
+name: Issue with Data
+description: Submit an issue with the data provided in the app. (Broken links, new modules, ...)
+title: "[Bug]: "
+labels: ["bug"]
+assignees:
+  - AlexRomberg
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to help keeping the site up to date!
+  - type: input
+    id: module
+    attributes:
+      label: Affected Module
+      description: On which module/modules does the issue happen?
+      placeholder: ex. ANA-G
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is the issue?
+      description: Also tell us, what did you expect to be there?
+      placeholder: ex. Link is broken, is now ...
+    validations:
+      required: true
