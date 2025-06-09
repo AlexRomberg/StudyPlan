@@ -38,6 +38,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "deleteOutputPath": true,
             "outputPath": "dist/study-plan",
             "index": "src/index.html",
             "browser": "src/main.ts",

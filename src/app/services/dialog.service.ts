@@ -23,4 +23,11 @@ export class DialogService {
       });
     });
   }
+
+  closeDialog() {
+    const data = this.dialogData();
+    if (data) {
+      data.resolve();
+    }
+  }
 }
