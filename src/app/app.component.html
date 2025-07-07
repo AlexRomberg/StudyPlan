@@ -1,4 +1,4 @@
-<div class="w-full min-h-lvh grid grid-cols-1 md:grid-cols-[13rem_1fr] max-w-lvw overflow-x-hidden" [class.overflow-hidden]="isDialogOpen()">
+<div class="w-full min-h-lvh grid grid-cols-1 md:grid-cols-[13rem_1fr] max-w-lvw overflow-x-hidden" [class.overflow-hidden]="state.dialogData()">
     <div class="max-md:hidden">
         <app-sidebar />
     </div>
@@ -11,6 +11,4 @@
     <app-sidebar />
 </div>
 }
-@if(isDialogOpen()) {
 <app-module-dialog />
-}

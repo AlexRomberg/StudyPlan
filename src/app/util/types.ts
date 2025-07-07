@@ -12,9 +12,9 @@ export interface OfficialModuleDefinition {
     name: string,
     credits: number,
     url: string,
-    semester: "HS" | "FS" | "HS / FS",
+    semester: Semester[],
     lecturer: string,
-    language: "Deutsch" | "Englisch" | "Deutsch / Englisch",
+    language: Language[],
 }
 
 export type ModuleDefinition = OfficialModuleDefinition | GenericModuleDefinition;
@@ -31,13 +31,15 @@ export type ModuleGroup = {
     [key in "core" | "extension" | "additional" | "blockweek"]: OfficialModuleDefinition[]
 }
 
+export enum Semester {
+    HS = "hs",
+    FS = "fs",
+    Blockweek = "blockweek",
+}
 
-// --- CLEANUP --------------------------------------------
-export interface Module {
-    code: string;
-    name: string;
-    type: "core" | "project" | "elective";
-    credits: number;
+export enum Language {
+    Deutsch = "de",
+    Englisch = "en",
 }
 
 export interface ModulePersonalization {
@@ -47,6 +49,17 @@ export interface ModulePersonalization {
     done: boolean;
     interested: boolean;
 }
+
+
+// --- CLEANUP --------------------------------------------
+export interface Module {
+    code: string;
+    name: string;
+    type: "core" | "project" | "elective";
+    credits: number;
+}
+
+
 
 export type ModulePlanPersonalization = {
     [key: string]: ModulePlanPersonalizationItem[]

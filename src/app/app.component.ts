@@ -14,7 +14,6 @@ import { StateService } from './services/state.service';
 export class AppComponent {
   title = 'StudyPlan';
   dialog = inject(DialogService);
-  isDialogOpen = computed(() => Boolean(this.dialog.moduleDialogData()));
   state = inject(StateService);
 
 }

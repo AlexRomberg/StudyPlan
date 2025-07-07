@@ -1,67 +1,45 @@
-import { Injectable } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 import { ModulePersonalization, ModulePlanPersonalization } from '../util/types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonalizationService {
+  private modulePersonalizations;
 
-  constructor() { }
+  constructor() {
+    const personalizations = this.tryLoadModulePersonalizations();
+    this.modulePersonalizations = signal<ModulePersonalization[]>(personalizations);
 
-  getDegreeProgram(): string {
-    return (localStorage.getItem("degreeProgram") as string) ?? "I-VZ";
+    effect(() => {
+      localStorage.setItem('module-personalizations', JSON.stringify(this.modulePersonalizations()));
+    });
   }
 
-  setDegreeProgram(degreeProgram: string) {
-    localStorage.setItem("degreeProgram", degreeProgram);
-  }
-
-  getModulePersonalizations(): ModulePersonalization[] {
-    const personalization = localStorage.getItem(`modulePersonalization`);
-    if (personalization) {
-      return JSON.parse(personalization) as ModulePersonalization[];
+  private tryLoadModulePersonalizations(): ModulePersonalization[] {
+    const storedPersonalizations = localStorage.getItem('module-personalizations');
+    if (storedPersonalizations) {
+      try {
+        return JSON.parse(storedPersonalizations);
+      } catch (e) {
+        console.error('Failed to parse module personalizations:', e);
+      }
     }
     return [];
   }
 
-  getModulePersonalization(moduleCode: string): ModulePersonalization | undefined {
-    return this.getModulePersonalizations().find(m => m.code === moduleCode);
-  }
-
-  setModulePersonalization(moduleCode: string, personalization: Partial<ModulePersonalization>) {
-    const personalizations = this.getModulePersonalizations();
-    const existingPersonalization = personalizations.find(m => m.code === moduleCode) || { code: moduleCode, notes: '', credited: false };
-    const newPersonalization = {
-      ...existingPersonalization,
-      ...personalization,
-      code: moduleCode
+  getModulePersonalization(code: string): ModulePersonalization {
+    return this.modulePersonalizations().find(p => p.code === code) ?? {
+      code, notes: '', credited: false, done: false, interested: false
     };
-
-    const newPersonalizations = [
-      ...personalizations.filter(m => m.code !== moduleCode),
-      newPersonalization
-    ];
-    localStorage.setItem(`modulePersonalization`, JSON.stringify(newPersonalizations));
   }
 
-  getModulePlanPersonalizations(degreeProgram: string) {
-    const personalization = localStorage.getItem(`modulePlanPersonalization`);
-    if (personalization) {
-      const modulePlan = (JSON.parse(personalization) as ModulePlanPersonalization)
-      return modulePlan[degreeProgram] ?? [];
-    }
-    return [];
-  }
+  setModulePersonalization(code: string, personalization: Partial<ModulePersonalization>): void {
+    const currentPersonalization = this.getModulePersonalization(code);
 
-  getModulePlanPersonalization(degreeProgram: string, semesterIndex: number, moduleIndex: number) {
-    return this.getModulePlanPersonalizations(degreeProgram).find(c => c.semesterIndex === semesterIndex && c.moduleIndex === moduleIndex);
-  }
-
-  setModulePlanPersonalization(degreeProgram: string, semesterIndex: number, moduleIndex: number, linkedModule: string) {
-    const personalization = localStorage.getItem(`modulePlanPersonalization`) ?? "{}";
-    const modulePlan = (JSON.parse(personalization) as ModulePlanPersonalization)
-    const filteredModulPlan = (modulePlan[degreeProgram] ?? []).filter(p => !(p.semesterIndex === semesterIndex && p.moduleIndex === moduleIndex));
-    modulePlan[degreeProgram] = [...filteredModulPlan, ...(linkedModule ? [{ semesterIndex, moduleIndex, linkedModule }] : [])];
-    localStorage.setItem("modulePlanPersonalization", JSON.stringify(modulePlan));
+    this.modulePersonalizations.update(personalizations => [
+      ...(personalizations.filter(p => p.code !== code)),
+      { ...currentPersonalization, ...personalization }
+    ]);
   }
 }

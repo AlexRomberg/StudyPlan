@@ -7,53 +7,56 @@
     </span>
     <span class="flex items-center max-sm:flex-col gap-y-1">
         <p class="text-zinc-400 mr-4">Studiengang:</p>
-        <select class="bg-zinc-800 text-zinc-300 p-2 px-4 rounded-md max-sm:w-30" [ngModel]="state.moduleGrouping()" (ngModelChange)="state.setModuleGrouping($event)">
-            @for (program of state.degreeProgramList(); track $index) {
-            <option [value]="program">{{ program }}</option>
+        <select class="bg-zinc-800 text-zinc-300 p-2 px-4 rounded-md w-30" [ngModel]="state.moduleScope()" (ngModelChange)="state.setModuleScope($event)">
+            @for (scope of modules.moduleScopes(); track $index) {
+            <option [value]="scope">{{ scope }}</option>
             }
         </select>
     </span>
 </span>
 
-@if (moduleDefinitions() === undefined) {
-<div class="flex justify-center items-center h-96">
-    <lucide-icon name="loader-circle" size="32" class="animate-spin text-zinc-400" />
-</div>
-} @else if (moduleDefinitions() === null) {
-<div class="flex flex-col gap-2 justify-center items-center h-96">
-    <p class="text-zinc-400">Keine Module gefunden.</p>
-    <button class="flex gap-2 items-center bg-zinc-800 p-2 px-4 rounded-lg" (click)="loadModules()">
-        <lucide-icon name="rotate-cw" />
-        Neu laden
-    </button>
-</div>
-} @else {
+@defer (when modules.modulesByScope(); on immediate) {
+@if(modules.modulesByScope();as modulesByScope) {
 @for (moduleGroup of moduleGroups; track $index) {
+
 @if (!$first) {
 <hr class="border-zinc-700 mx-8" />
 }
+
 <div class="flex flex-col px-8 py-4 gap-2">
-    <button class="flex justify-between items-center cursor-pointer" (click)="toggleModuleGroup(moduleGroup.key)">
+    <button class="flex justify-between items-center cursor-pointer pb-4" (click)="toggleModuleGroup(moduleGroup.key)">
         <h2 class="text-2xl">{{moduleGroup.name}}</h2>
-        <lucide-icon [name]="modulesOpen()[moduleGroup.key]?'chevron-up':'chevron-down'" size="20" class="text-zinc-400 mr-1" />
+        <span class="flex">
+            @if (!modulesOpen()[moduleGroup.key]) {
+            <p class="text-sm bg-zinc-700 rounded-full px-2 mr-2 max-sm:hidden">{{modulesByScope[moduleGroup.key].length}}</p>
+            }
+            <lucide-icon [name]="modulesOpen()[moduleGroup.key]?'chevron-up':'chevron-down'" size="20" class="text-cyan-400 mr-1" />
+        </span>
     </button>
+
     @if (modulesOpen()[moduleGroup.key]) {
-    @for (module of groupedModules.value()[moduleGroup.key]; track $index) {
+    @for (module of modulesByScope[moduleGroup.key]; track $index) {
     <button class="bg-zinc-800 p-4 rounded-lg grid grid-cols-[8rem_1fr_10rem] lg:grid-cols-[8rem_1fr_8rem_6rem_10rem] max-md:grid-cols-[1fr_10rem] max-md:grid-rows-[1fr_auto] gap-x-2 items-center text-left cursor-pointer" (click)="openModule(module)">
         <p>{{ module.code }}</p>
         <p class="max-md:row-start-2 max-md:col-span-2 max-md:text-zinc-400 max-md:text-sm">{{ module.name }}</p>
         <div class="max-lg:hidden">
+            @if (isCredited(module)) {
+            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="check" size="16" /> Angerechnet</p>
+            } @else if (isDone(module)) {
             <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="circle-check" size="16" /> Abgeschlossen</p>
-            <!--  @if (isCredited(module)) {
-                            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="check" size="16" /> Angerechnet</p>
-                            } @else if (isDone(module)) {
-                            } @else if (isInterested(module)) {
-                        <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="star" size="16" /> Interesse</p> } -->
+            } @else if (isInterested(module)) {
+            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="star" size="16" /> Interesse</p> }
         </div>
         <p class="text-sm icon-container text-zinc-400 max-lg:hidden" title="ECTS-Credits"><lucide-icon name="award" /><b class="text-lg text-zinc-100">{{ module.credits }}</b> Credits</p>
         <a [href]="module.url" target="_blank" (click)="$event.stopPropagation()" class="icon-container ml-2 hover:bg-zinc-700 rounded-md p-2">Modulbeschrieb <lucide-icon name="external-link" size="16" /></a>
-    </button>
-    }
+    </button>}}
+</div> }}}
+
+@placeholder (minimum 200ms) {
+<div class="flex flex-col px-8 py-4 gap-2">
+    <div class="bg-zinc-800 w-32 h-6 rounded-md mt-2 mb-4"></div>
+    @for (item of [].constructor(10); track $index) {
+    <div class="bg-zinc-800 p-4 rounded-lg h-18 animate-pulse"></div>
     }
 </div>
-}}
+}

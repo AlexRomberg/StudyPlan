@@ -1,5 +1,6 @@
 import { computed, effect, inject, Injectable, resource, signal } from '@angular/core';
 import { DBService } from './db.service';
+import { ModuleDefinition } from '../util/types';
 
 @Injectable({
   providedIn: 'root'
@@ -10,21 +11,16 @@ export class StateService {
   // State
   private temporaryState = signal({
     menuOpen: false,
+    dialogData: undefined as { module: ModuleDefinition, resolve: () => void, semesterIndex?: number, moduleIndex?: number } | undefined
   });
   private persistentState = signal({
     degreeProgram: 'I-VZ',
-    moduleGrouping: "I"
-  });
-  private lists = resource({
-    loader: async () => ({
-      degreePrograms: await this.db.getDegreePrograms(),
-    })
+    moduleScope: "Informatik"
   });
 
   private state = computed(() => ({
     ...this.temporaryState(),
     ...this.persistentState(),
-    ...this.lists.value(),
   }));
 
   // State loading
@@ -49,9 +45,9 @@ export class StateService {
 
   // Selectors
   public menuOpen = computed(() => this.state().menuOpen);
-  public moduleGrouping = computed(() => this.state().moduleGrouping);
+  public moduleScope = computed(() => this.state().moduleScope);
   public degreeProgram = computed(() => this.state().degreeProgram);
-  public degreeProgramList = computed(() => this.state().degreePrograms);
+  public dialogData = computed(() => this.state().dialogData);
 
   // Setters
   public setMenuOpen(menuOpen: boolean) {
@@ -68,10 +64,25 @@ export class StateService {
     }));
   }
 
-  public setModuleGrouping(moduleGrouping: string) {
+  public setModuleScope(moduleGrouping: string) {
     this.persistentState.update(state => ({
       ...state,
-      moduleGrouping
+      moduleScope: moduleGrouping
+    }));
+  }
+
+  public setDialogData(module: ModuleDefinition, resolve: () => void, semesterIndex?: number, moduleIndex?: number) {
+    this.temporaryState.update(state => ({
+      ...state,
+      dialogData: {
+        module,
+        resolve: () => {
+          this.temporaryState.update(s => ({ ...s, dialogData: undefined }));
+          resolve();
+        },
+        semesterIndex,
+        moduleIndex
+      }
     }));
   }
 }

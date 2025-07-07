@@ -1,33 +1,25 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { ModuleDefinition } from '../util/types';
+import { StateService } from './state.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DialogService {
-  private dialogData = signal<{ module: ModuleDefinition, resolve: () => void, semesterIndex: number | undefined, moduleIndex: number | undefined } | undefined>(undefined);
-  public get moduleDialogData() {
-    return this.dialogData.asReadonly();
-  }
+  private state = inject(StateService);
 
   async openDialog(module: ModuleDefinition, semesterIndex?: number, moduleIndex?: number) {
     return new Promise<void>((resolve) => {
-      this.dialogData.set({
+      this.state.setDialogData(
         module,
-        resolve: () => {
-          this.dialogData.set(undefined);
-          resolve();
-        },
+        resolve,
         semesterIndex,
         moduleIndex
-      });
+      );
     });
   }
 
   closeDialog() {
-    const data = this.dialogData();
-    if (data) {
-      data.resolve();
-    }
+    this.state.dialogData()?.resolve();
   }
 }
