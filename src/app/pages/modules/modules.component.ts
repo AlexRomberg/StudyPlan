@@ -1,81 +1,68 @@
-import { Component, computed, inject, signal } from '@angular/core';
-import moduleDefinitions from "../../models/modules.json";
+import { Component, inject, OnInit, resource, signal } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
+import { ModuleDefinition, ModuleGroup, OfficialModuleDefinition } from '../../util/types';
+import { DBService } from '../../services/db.service';
+import { StateService } from '../../services/state.service';
 import { DialogService } from '../../services/dialog.service';
-import { ModuleDefinition } from '../../util/types';
-import { PersonalizationService } from '../../services/personalization.service';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { debounce, debounceTime, filter, last, tap } from 'rxjs';
-import { moduleMap } from '../../models/moduleplans';
+import { FormsModule } from '@angular/forms';
+import { moduleGroups } from '../../util/modules';
 
 @Component({
   selector: 'app-modules',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, FormsModule],
   templateUrl: './modules.component.html',
   styleUrl: './modules.component.css'
 })
-export class ModulesComponent {
+export class ModulesComponent implements OnInit {
+  private db = inject(DBService);
   private dialog = inject(DialogService);
-  private personalization = inject(PersonalizationService);
-  private router = inject(Router);
-  private activatedRoute = inject(ActivatedRoute);
+  state = inject(StateService);
 
-  modules = computed(() => Object.groupBy(moduleDefinitions, ({ type }) => type));
-  moduleGroups: { key: "core" | "extension" | "additional" | "blockweek", name: string }[] = [
-    { name: 'Kern-Module', key: 'core' },
-    { name: 'Erweiterungs-Module', key: 'extension' },
-    { name: 'Zusatz-Module', key: 'additional' },
-    { name: 'Blockwochen', key: 'blockweek' }
-  ]
+  moduleGroups = moduleGroups;
+  moduleDefinitions = signal<OfficialModuleDefinition[] | null | undefined>(undefined);
   modulesOpen = signal({
     core: true,
     extension: true,
     additional: true,
     blockweek: true
   });
+  groupedModules = resource({
+    defaultValue: { core: [], extension: [], additional: [], blockweek: [] },
+    params: () => (this.state.moduleGrouping()),
+    loader: ({ params }) => this.db.getModuleByGroup(params)
+  });
 
-  constructor() {
-    this.router.events
-      .pipe(
-        filter(event => event instanceof NavigationEnd),
-        debounceTime(200)
-      )
-      .subscribe(() => {
-        this.openModuleFromURL();
-      });
+  ngOnInit() {
+    this.loadModules();
   }
 
-  private openModuleFromURL() {
-    let route = this.activatedRoute.snapshot;
-    while (route.firstChild) {
-      route = route.firstChild;
-    }
-    const module = moduleMap.get(route.params['code']);
-    if (module) {
-      this.dialog.openDialog(module);
-    }
-  }
-
-  toggleModuleGroup(group: "core" | "extension" | "additional" | "blockweek") {
-    this.modulesOpen.update(open => ({ ...open, [group]: !open[group] }));
+  loadModules() {
+    this.moduleDefinitions.set(undefined);
+    this.db.getModules().then(modules => {
+      this.moduleDefinitions.set(modules);
+    });
   }
 
   openModule(module: ModuleDefinition) {
-    this.router.navigate(['modules', module.code]);
+    this.dialog.openDialog(module)
   }
 
-  isCredited(module: ModuleDefinition): boolean {
-    const personalization = this.personalization.getModulePersonalization(module.code);
-    return personalization?.credited ?? false;
+  toggleModuleGroup(group: keyof ModuleGroup) {
+    this.modulesOpen.update(open => ({ ...open, [group]: !open[group] }));
   }
 
-  isDone(module: ModuleDefinition): boolean {
-    const personalization = this.personalization.getModulePersonalization(module.code);
-    return personalization?.done ?? false;
-  }
+  // isCredited(module: ModuleDefinition): boolean {
+  //   const personalization = this.personalization.getModulePersonalization(module.code);
+  //   return personalization?.credited ?? false;
+  // }
 
-  isInterested(module: ModuleDefinition): boolean {
-    const personalization = this.personalization.getModulePersonalization(module.code);
-    return personalization?.interested ?? false;
-  }
+  // isDone(module: ModuleDefinition): boolean {
+  //   const personalization = this.personalization.getModulePersonalization(module.code);
+  //   return personalization?.done ?? false;
+  // }
+
+  // isInterested(module: ModuleDefinition): boolean {
+  //   const personalization = this.personalization.getModulePersonalization(module.code);
+  //   return personalization?.interested ?? false;
+  // }
 }

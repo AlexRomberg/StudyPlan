@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { degreeProgram, ModulePersonalization, ModulePlanPersonalization } from '../util/types';
+import { ModulePersonalization, ModulePlanPersonalization } from '../util/types';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +8,11 @@ export class PersonalizationService {
 
   constructor() { }
 
-  getDegreeProgram(): degreeProgram {
-    return (localStorage.getItem("degreeProgram") as degreeProgram) ?? "I-VZ";
+  getDegreeProgram(): string {
+    return (localStorage.getItem("degreeProgram") as string) ?? "I-VZ";
   }
 
-  setDegreeProgram(degreeProgram: degreeProgram) {
+  setDegreeProgram(degreeProgram: string) {
     localStorage.setItem("degreeProgram", degreeProgram);
   }
 
@@ -44,7 +44,7 @@ export class PersonalizationService {
     localStorage.setItem(`modulePersonalization`, JSON.stringify(newPersonalizations));
   }
 
-  getModulePlanPersonalizations(degreeProgram: degreeProgram) {
+  getModulePlanPersonalizations(degreeProgram: string) {
     const personalization = localStorage.getItem(`modulePlanPersonalization`);
     if (personalization) {
       const modulePlan = (JSON.parse(personalization) as ModulePlanPersonalization)
@@ -53,11 +53,11 @@ export class PersonalizationService {
     return [];
   }
 
-  getModulePlanPersonalization(degreeProgram: degreeProgram, semesterIndex: number, moduleIndex: number) {
+  getModulePlanPersonalization(degreeProgram: string, semesterIndex: number, moduleIndex: number) {
     return this.getModulePlanPersonalizations(degreeProgram).find(c => c.semesterIndex === semesterIndex && c.moduleIndex === moduleIndex);
   }
 
-  setModulePlanPersonalization(degreeProgram: degreeProgram, semesterIndex: number, moduleIndex: number, linkedModule: string) {
+  setModulePlanPersonalization(degreeProgram: string, semesterIndex: number, moduleIndex: number, linkedModule: string) {
     const personalization = localStorage.getItem(`modulePlanPersonalization`) ?? "{}";
     const modulePlan = (JSON.parse(personalization) as ModulePlanPersonalization)
     const filteredModulPlan = (modulePlan[degreeProgram] ?? []).filter(p => !(p.semesterIndex === semesterIndex && p.moduleIndex === moduleIndex));

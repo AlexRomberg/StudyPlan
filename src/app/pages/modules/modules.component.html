@@ -1,7 +1,33 @@
 <span class="flex justify-between items-center p-8 pb-4">
-    <h1 class="text-3xl font-bold">Module</h1>
-    <a class="bg-zinc-800 icon-container p-2 px-4 rounded-lg" href="https://github.com/AlexRomberg/StudyPlan/issues/new?template=data_issue.yml" target="_blank"><lucide-icon name="message-circle-warning" /> Problem melden</a>
+    <span class="flex items-center gap-4">
+        <button (click)="state.setMenuOpen(true)" class="md:hidden">
+            <lucide-icon name="align-justify" />
+        </button>
+        <h1 class="text-3xl font-bold">Module</h1>
+    </span>
+    <span class="flex items-center max-sm:flex-col gap-y-1">
+        <p class="text-zinc-400 mr-4">Studiengang:</p>
+        <select class="bg-zinc-800 text-zinc-300 p-2 px-4 rounded-md max-sm:w-30" [ngModel]="state.moduleGrouping()" (ngModelChange)="state.setModuleGrouping($event)">
+            @for (program of state.degreeProgramList(); track $index) {
+            <option [value]="program">{{ program }}</option>
+            }
+        </select>
+    </span>
 </span>
+
+@if (moduleDefinitions() === undefined) {
+<div class="flex justify-center items-center h-96">
+    <lucide-icon name="loader-circle" size="32" class="animate-spin text-zinc-400" />
+</div>
+} @else if (moduleDefinitions() === null) {
+<div class="flex flex-col gap-2 justify-center items-center h-96">
+    <p class="text-zinc-400">Keine Module gefunden.</p>
+    <button class="flex gap-2 items-center bg-zinc-800 p-2 px-4 rounded-lg" (click)="loadModules()">
+        <lucide-icon name="rotate-cw" />
+        Neu laden
+    </button>
+</div>
+} @else {
 @for (moduleGroup of moduleGroups; track $index) {
 @if (!$first) {
 <hr class="border-zinc-700 mx-8" />
@@ -12,22 +38,22 @@
         <lucide-icon [name]="modulesOpen()[moduleGroup.key]?'chevron-up':'chevron-down'" size="20" class="text-zinc-400 mr-1" />
     </button>
     @if (modulesOpen()[moduleGroup.key]) {
-    @for (module of modules()[moduleGroup.key]; track $index) {
-    <button class="bg-zinc-800 p-4 rounded-lg grid grid-cols-[8rem_1fr_8rem_6rem_10rem] gap-2 items-center text-left cursor-pointer" (click)="openModule(module)">
+    @for (module of groupedModules.value()[moduleGroup.key]; track $index) {
+    <button class="bg-zinc-800 p-4 rounded-lg grid grid-cols-[8rem_1fr_10rem] lg:grid-cols-[8rem_1fr_8rem_6rem_10rem] max-md:grid-cols-[1fr_10rem] max-md:grid-rows-[1fr_auto] gap-x-2 items-center text-left cursor-pointer" (click)="openModule(module)">
         <p>{{ module.code }}</p>
-        <p>{{ module.name }}</p>
-        <div>
-            @if (isCredited(module)) {
-            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="check" size="16" /> Angerechnet</p>
-            }@else if (isDone(module)) {
-            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="circle-check" size="16" /> Abgeschlossen</p> }
-            @else if (isInterested(module)) {
-            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="star" size="16" /> Interesse</p> }
+        <p class="max-md:row-start-2 max-md:col-span-2 max-md:text-zinc-400 max-md:text-sm">{{ module.name }}</p>
+        <div class="max-lg:hidden">
+            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="circle-check" size="16" /> Abgeschlossen</p>
+            <!--  @if (isCredited(module)) {
+                            <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="check" size="16" /> Angerechnet</p>
+                            } @else if (isDone(module)) {
+                            } @else if (isInterested(module)) {
+                        <p class="text-zinc-100 text-handwritten text-xs icon-container p-2 px-3 rounded-full bg-zinc-700 justify-center"><lucide-icon name="star" size="16" /> Interesse</p> } -->
         </div>
-        <p class="text-sm icon-container text-zinc-400" title="ECTS-Credits"><lucide-icon name="award" /><b class="text-lg text-zinc-100">{{ module.credits }}</b> Credits</p>
+        <p class="text-sm icon-container text-zinc-400 max-lg:hidden" title="ECTS-Credits"><lucide-icon name="award" /><b class="text-lg text-zinc-100">{{ module.credits }}</b> Credits</p>
         <a [href]="module.url" target="_blank" (click)="$event.stopPropagation()" class="icon-container ml-2 hover:bg-zinc-700 rounded-md p-2">Modulbeschrieb <lucide-icon name="external-link" size="16" /></a>
     </button>
     }
     }
 </div>
-}
+}}

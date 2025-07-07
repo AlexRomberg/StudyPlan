@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { LucideAngularModule } from 'lucide-angular';
+import { StateService } from '../../services/state.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,5 +10,5 @@ import { LucideAngularModule } from 'lucide-angular';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-
+  state = inject(StateService);
 }

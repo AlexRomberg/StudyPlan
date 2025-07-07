@@ -1,4 +1,4 @@
-import { Award, Check, ChevronDown, ChevronUp, CircleCheck, ExternalLink, FileText, Grid3x3, Heart, Info, Languages, LayoutList, MessageCircleWarning, Star, SunSnow, UserRound, X, Lock, Pen } from "lucide-angular";
+import { Award, Check, ChevronDown, ChevronUp, CircleCheck, ExternalLink, FileText, Grid3x3, Heart, Info, Languages, LayoutList, MessageCircleWarning, Star, SunSnow, UserRound, X, Lock, Pen, AlignJustify, Loader, LoaderCircle, RotateCw } from "lucide-angular";
 
 
 export const icons = {
@@ -20,5 +20,8 @@ export const icons = {
     Star,
     SunSnow,
     UserRound,
-    X
+    X,
+    AlignJustify,
+    LoaderCircle,
+    RotateCw
 }

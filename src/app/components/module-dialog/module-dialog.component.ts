@@ -4,7 +4,7 @@ import { LucideAngularModule } from 'lucide-angular';
 import { PersonalizationService } from '../../services/personalization.service';
 import { FormsModule } from '@angular/forms';
 import { ModulePersonalization, ModulePlanPersonalizationItem } from '../../util/types';
-import { moduleMap } from '../../models/moduleplans';
+// import { moduleMap } from '../../models/moduleplans';
 
 @Component({
   selector: 'app-module-dialog',
@@ -13,7 +13,7 @@ import { moduleMap } from '../../models/moduleplans';
   styleUrl: './module-dialog.component.css'
 })
 export class ModuleDialogComponent {
-  dialog = inject(DialogService);
+  /* dialog = inject(DialogService);
   personalization = inject(PersonalizationService);
 
   personalizationData = computed<ModulePersonalization | null>(() => {
@@ -100,5 +100,5 @@ export class ModuleDialogComponent {
     if (module === null || semesterIndex === undefined || moduleIndex === undefined) return;
     this.personalization.setModulePlanPersonalization(this.personalization.getDegreeProgram(), semesterIndex, moduleIndex, module);
     this.closeDialog();
-  }
+  } */
 }
