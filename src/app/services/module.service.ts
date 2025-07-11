@@ -1,6 +1,6 @@
 import { computed, inject, Injectable, resource } from '@angular/core';
 import { DBService } from './db.service';
-import { DBModuleDefinition, GenericModuleDefinition, ModuleDefinition, ModuleGroup } from '../util/types';
+import { GenericModuleDefinition, ModuleDefinition, ModuleGroup } from '../util/types';
 import { StateService } from './state.service';
 import { PersonalizationService } from './personalization.service';
 import { genericModules } from '../util/modules';

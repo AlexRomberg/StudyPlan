@@ -1,5 +1,4 @@
 import { Models } from "appwrite";
-import { moduleGroups } from "./modules";
 
 export interface GenericModuleDefinition {
     code: string,

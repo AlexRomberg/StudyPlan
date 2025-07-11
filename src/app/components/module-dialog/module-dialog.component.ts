@@ -1,6 +1,6 @@
-import { Component, computed, effect, inject, model, signal } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { DialogService } from '../../services/dialog.service';
-import { Currency, LucideAngularModule } from 'lucide-angular';
+import { LucideAngularModule } from 'lucide-angular';
 import { PersonalizationService } from '../../services/personalization.service';
 import { FormsModule } from '@angular/forms';
 import { ModulePersonalization } from '../../util/types';

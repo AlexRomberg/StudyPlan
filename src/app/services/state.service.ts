@@ -1,5 +1,4 @@
 import { computed, effect, Injectable, signal } from '@angular/core';
-import { ModuleDefinition } from '../util/types';
 
 @Injectable({
   providedIn: 'root'

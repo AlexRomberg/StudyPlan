@@ -1,5 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
-import { ModuleDefinition } from '../util/types';
+import { inject, Injectable } from '@angular/core';
 import { StateService } from './state.service';
 
 @Injectable({
