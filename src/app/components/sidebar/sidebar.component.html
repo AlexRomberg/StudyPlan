@@ -1,12 +1,17 @@
-<h1 class="px-4 py-8 pb-4 font-extralight text-3xl">Modulplaner</h1>
+<span class="flex justify-between items-center pt-4">
+    <h1 class="p-4 font-extralight text-3xl">Modulplaner</h1>
+    <button class="p-4 md:hidden">
+        <lucide-icon name="x" (click)="state.setMenuOpen(false)" />
+    </button>
+</span>
 <div class="flex flex-col p-2 color-zinc-300">
-    <a routerLink="plan" routerLinkActive="link-active" class="flex gap-4 hover:bg-zinc-700 link-active:bg-zinc-800/50 p-2 rounded-md">
-        <lucide-icon name="grid-3x3" class="link-active:text-cyan-400" />
-        Planung
-    </a>
-    <a routerLink="modules" routerLinkActive="link-active" class="flex gap-4 hover:bg-zinc-700 link-active:bg-zinc-800/50 p-2 rounded-md">
+    <a (click)="state.setMenuOpen(false)" routerLink="modules" routerLinkActive="link-active" class="flex gap-4 hover:bg-zinc-700 link-active:bg-zinc-800/50 p-2 rounded-md">
         <lucide-icon name="layout-list" class="link-active:text-cyan-400" />
-        Module
+        Modulübersicht
+    </a>
+    <a (click)="state.setMenuOpen(false)" routerLink="plan" routerLinkActive="link-active" class="flex gap-4 hover:bg-zinc-700 link-active:bg-zinc-800/50 p-2 rounded-md">
+        <lucide-icon name="grid-3x3" class="link-active:text-cyan-400" />
+        Studienplanung
     </a>
 </div>
-<p class="text-sm text-gray-500 justify-center p-4 icon-container">Made with <lucide-icon name="heart" size="12" strokeWidth="5" class="text-red-800" /> by Alex</p>
+<p class="text-sm text-gray-500 justify-center p-4 icon-container">An ARO-Project <lucide-icon name="heart" size="12" strokeWidth="5" class="text-red-800" /></p>

@@ -1,9 +1,14 @@
-<div class="w-full min-h-lvh grid grid-cols-[13rem_1fr] max-w-lvw overflow-x-hidden" [class.overflow-hidden]="isDialogOpen()">
-    <app-sidebar />
+<div class="w-full min-h-lvh grid grid-cols-1 md:grid-cols-[13rem_1fr] max-w-lvw overflow-x-hidden" [class.overflow-hidden]="state.dialogData()">
+    <div class="max-md:hidden">
+        <app-sidebar />
+    </div>
     <div class="max-h-lvh overflow-y-auto">
         <router-outlet />
     </div>
 </div>
-@if(isDialogOpen()) {
-<app-module-dialog />
+@if (state.menuOpen()) {
+<div class="w-full min-h-lvh md:hidden z-100 fixed top-0 left-0">
+    <app-sidebar />
+</div>
 }
+<app-module-dialog />

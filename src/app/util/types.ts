@@ -1,21 +1,47 @@
-export interface Module {
-    code: string;
-    name: string;
-    type: "core" | "project" | "elective";
-    credits: number;
+import { Models } from "appwrite";
+
+export interface GenericModuleDefinition {
+    code: string,
+    name: string,
+    credits: number,
+    isGenericModule: true,
+    type: "core" | "project" | "elective" | "major" | "work"
 }
 
-export interface ModuleDefinition {
+export interface OfficialModuleDefinition {
     code: string,
-    name: string
+    name: string,
     credits: number,
-    url: string | null,
-    type: string,
-    isGenericModule: boolean,
-    // TODO: The following properties are still missing
-    semester: string | null,
-    lecturer: string | null,
-    language: string | null,
+    url: string,
+    semester: Semester[],
+    lecturer: string,
+    language: Language[],
+}
+
+export type ModuleDefinition = OfficialModuleDefinition | GenericModuleDefinition;
+export interface DBModuleDefinition extends OfficialModuleDefinition, Models.Document { }
+export interface DBDegreeProgramConfig extends Models.Document {
+    name: string;
+    coreModules: string[];
+    projectModules: string[];
+    extensionModules: string[];
+    additionalModules: string[];
+    blockweekModules: string[];
+}
+
+export type ModuleGroup = {
+    [key in "core" | "project" | "extension" | "additional" | "blockweek"]: OfficialModuleDefinition[]
+}
+
+export enum Semester {
+    HS = "hs",
+    FS = "fs",
+    Blockweek = "blockweek",
+}
+
+export enum Language {
+    Deutsch = "de",
+    Englisch = "en",
 }
 
 export interface ModulePersonalization {
@@ -26,13 +52,27 @@ export interface ModulePersonalization {
     interested: boolean;
 }
 
+export interface DBSemesterPlan extends Models.Document {
+    name: string;
+    semesterModules: (string)[];
+    degreeProgram: string;
+}
+
+// --- CLEANUP --------------------------------------------
+export interface Module {
+    code: string;
+    name: string;
+    type: "core" | "project" | "elective";
+    credits: number;
+}
+
+
+
 export type ModulePlanPersonalization = {
-    [key in degreeProgram]: ModulePlanPersonalizationItem[]
+    [key: string]: ModulePlanPersonalizationItem[]
 }
 export interface ModulePlanPersonalizationItem {
     semesterIndex: number;
     moduleIndex: number;
     linkedModule: string;
 }
-
-export type degreeProgram = "I-VZ" | "I-TZ";

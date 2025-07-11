@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { ModuleDialogComponent } from './components/module-dialog/module-dialog.component';
 import { DialogService } from './services/dialog.service';
+import { StateService } from './services/state.service';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,6 @@ import { DialogService } from './services/dialog.service';
 export class AppComponent {
   title = 'StudyPlan';
   dialog = inject(DialogService);
-  isDialogOpen = computed(() => Boolean(this.dialog.moduleDialogData()));
+  state = inject(StateService);
+
 }

@@ -1,37 +1,53 @@
 <div class="p-8 overflow-x-hidden">
-    <h1 class="text-3xl mb-4 font-bold">Planung</h1>
-    <span class="flex items-center text-zinc-400">
-        <label class="text-lg mr-4">Modulplan:</label>
-        <select class="text-lg p-4 pl-0" [(ngModel)]="selectedDegreeProgram">
-            <option value="I-VZ">Informatik VZ</option>
-            <option value="I-TZ">Informatik TZ</option>
-        </select>
+    <span class="flex items-center gap-4 mb-4">
+        <button (click)="state.setMenuOpen(true)" class="md:hidden">
+            <lucide-icon name="align-justify" />
+        </button>
+        <h1 class="text-3xl font-bold">{{personalization.modulePlan() ? "Planung" : "Neue Planung beginnen"}}</h1>
+    </span>
+    @if (personalization.modulePlan(); as modulePlan){
+    <span class="flex justify-between items-center mb-4">
+        <p class="text-zinc-400 italic">Basierend auf Modulplan für {{modulePlan.degreeProgram}}</p>
+        @if (planningState() === "edit") {
+        <span class="flex gap-4">
+            <button class="bg-zinc-800 text-zinc-300 p-2 px-4 rounded-lg flex items-center gap-2" (click)="this.resetModulePlan()">
+                <lucide-icon name="layout-template" size="16" /> Vorlage ändern
+            </button>
+            <button class="bg-zinc-800 text-zinc-300 p-2 px-4 rounded-lg flex items-center gap-2" (click)="planningState.set('template')">
+                <lucide-icon name="check" size="16" /> Fertig
+            </button>
+        </span>
+        } @else {
+        <button class="bg-zinc-800 text-zinc-300 p-2 px-4 rounded-lg flex items-center gap-2" (click)="planningState.set('edit')">
+            <lucide-icon name="pen" size="16" /> Bearbeiten
+        </button>
+        }
     </span>
     <div class="w-full-container overflow-x-auto">
-        <div class="grid grid-cols-11 gap-1 min-w-4xl" [style.gridTemplateRows]="`repeat(${selectedModulePlan().length}, 4rem)`">
-            @for (semester of selectedModulePlan(); track $index; let semesterIndex = $index) {
+        <div class="grid grid-cols-11 gap-1 min-w-4xl" [style.gridTemplateRows]="`repeat(${modulePlan.plan.length}, 4rem)`">
+            @for (semester of modulePlan.plan; track $index; let semesterIndex = $index) {
             <div class="col-1 content-center whitespace-nowrap px-2">
-                <p class="xl:hidden">{{selectedModulePlan().length - $index}}. Sem.</p>
-                <p class="max-xl:hidden">{{selectedModulePlan().length - $index}}. Semester</p>
+                <p class="xl:hidden">{{modulePlan.plan.length - $index}}. Sem.</p>
+                <p class="max-xl:hidden">{{modulePlan.plan.length - $index}}. Semester</p>
             </div>
-            @for (module of asModules(semester); track $index; let moduleIndex = $index) {
-            @if (module) {
-            <button [class]="getModuleStyling(module)" class="text-sm rounded-lg content-center text-center cursor-pointer" [class.opacity-60]="isCredited(module)" [title]="module.name" (click)="selectModule(module, semesterIndex, moduleIndex)">
-                <p [class.text-zinc-400]="isCredited(module)" [class.text-handwritten]="resolveModule(module, semesterIndex, moduleIndex).isPersonalized">{{resolveModule(module, semesterIndex, moduleIndex).code}}</p>
-                @if (isCredited(module)) {
+            @for (module of modules.resolvedPersonalizedModulePlan()?.[semesterIndex]; track $index; let moduleIndex = $index) {
+            @if (module && module.current) {
+            <button [style]="{gridRowStart: modulePlan.plan.length - semesterIndex, gridColumnStart: moduleIndex + 2}" [class]="getModuleStyling(module)" class="text-sm rounded-lg content-center text-center cursor-pointer" [class.opacity-60]="isCredited(module.current)" [title]="module.current.name" (click)="selectModule(module, semesterIndex, moduleIndex)">
+                <p [class.text-zinc-400]="isCredited(module.current)" [class.text-handwritten]="resolveModule(module).isPersonalized">{{resolveModule(module).code}}</p>
+                @if (isCredited(module.current)) {
                 <p class="text-zinc-100 text-handwritten text-2xs">Angerechnet</p>
-                } @else if (isDone(module)) {
+                } @else if (isDone(module.current)) {
                 <p class="text-zinc-100 text-handwritten text-2xs icon-container justify-center gap-0.5"><lucide-icon name="circle-check" size="12" /> Abgeschlossen</p>
                 }
             </button>
-            } @else {
-            <div class="text-sm rounded-lg content-center text-center cursor-pointer bg-zinc-700">
-                <p>{{semester[$index]}}</p>
-                <i>Unknown</i>
-            </div>
+            } @else if (module != null) {
+            <button [style]="{gridRowStart: modulePlan.plan.length - semesterIndex, gridColumnStart: moduleIndex + 2}" class="text-sm rounded-lg content-center text-center cursor-pointer" [class]="getUnknownModuleStyling(semester[$index])" (click)="selectModuleTemplate(semester[$index], semesterIndex, moduleIndex)">
+                <p class="text-handwritten">{{semester[$index]?.code}}</p>
+            </button>
             }}}
         </div>
     </div>
+
     <div class="p-4 pt-2 rounded-lg mt-4 text-zinc-400 flex gap-6 items-center">
         <span class="flex items-center gap-2 text-sm">
             <span class="w-4 h-2 block rounded-full bg-cyan-700"></span>
@@ -54,4 +70,18 @@
             <p>Anrechnung Berufstätigkeit</p>
         </span>
     </div>
+    } @else {
+    <div class="w-full rounded-2xl border-zinc-600 border-dashed border-2 p-4 grid grid-cols-2 md:grid-cols-4 auto-rows-auto gap-2">
+        <p class="col-span-full flex justify-center gap-2 pt-2 pb-4 text-lg items-center"><lucide-icon name="layout-template"></lucide-icon> Wähle eine Vorlage:</p>
+        @if (modules.semesterPlans(); as semesterPlans) {
+        @for (plan of modules.semesterPlans(); track $index) {
+        <button class="bg-zinc-800 text-zinc-300 p-4 rounded-md cursor-pointer" (click)="importModulePlan(plan.semesterModules, plan.degreeProgram)">
+            <p>{{plan.name}}</p>
+            <p class="text-sm text-zinc-400">Modulplan: {{plan.degreeProgram}}</p>
+        </button>
+        }} @else {
+        <p class="text-zinc-400">Loading...</p>
+        }
+    </div>
+    }
 </div>

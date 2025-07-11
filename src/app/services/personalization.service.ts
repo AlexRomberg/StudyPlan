@@ -1,67 +1,119 @@
-import { Injectable } from '@angular/core';
-import { degreeProgram, ModulePersonalization, ModulePlanPersonalization } from '../util/types';
+import { effect, Injectable, signal } from '@angular/core';
+import { ModulePersonalization } from '../util/types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonalizationService {
+  private modulePersonalizations;
+  private personalModulePlan;
 
-  constructor() { }
+  constructor() {
+    this.modulePersonalizations = signal(
+      this.tryLoadLocalStorage<ModulePersonalization[]>("module-personalizations", [])
+    );
+    this.personalModulePlan = signal(
+      this.tryLoadLocalStorage<{ plan: ({ code: string, template?: string } | null)[][], degreeProgram: string } | undefined>("personal-module-plan", undefined)
+    );
 
-  getDegreeProgram(): degreeProgram {
-    return (localStorage.getItem("degreeProgram") as degreeProgram) ?? "I-VZ";
+    effect(() => {
+      localStorage.setItem('module-personalizations', JSON.stringify(this.modulePersonalizations()));
+    });
+    effect(() => {
+      localStorage.setItem('personal-module-plan', JSON.stringify(this.personalModulePlan()));
+    });
   }
 
-  setDegreeProgram(degreeProgram: degreeProgram) {
-    localStorage.setItem("degreeProgram", degreeProgram);
-  }
-
-  getModulePersonalizations(): ModulePersonalization[] {
-    const personalization = localStorage.getItem(`modulePersonalization`);
-    if (personalization) {
-      return JSON.parse(personalization) as ModulePersonalization[];
+  private tryLoadLocalStorage<T>(name: string, defaultValue: T): T {
+    const storedData = localStorage.getItem(name);
+    if (storedData && storedData !== 'undefined') {
+      try {
+        return JSON.parse(storedData);
+      } catch (e) {
+        console.error(`Failed to parse ${name}:`, e);
+      }
     }
-    return [];
+    return defaultValue;
   }
 
-  getModulePersonalization(moduleCode: string): ModulePersonalization | undefined {
-    return this.getModulePersonalizations().find(m => m.code === moduleCode);
-  }
-
-  setModulePersonalization(moduleCode: string, personalization: Partial<ModulePersonalization>) {
-    const personalizations = this.getModulePersonalizations();
-    const existingPersonalization = personalizations.find(m => m.code === moduleCode) || { code: moduleCode, notes: '', credited: false };
-    const newPersonalization = {
-      ...existingPersonalization,
-      ...personalization,
-      code: moduleCode
+  getModulePersonalization(code: string): ModulePersonalization {
+    return this.modulePersonalizations().find(p => p.code === code) ?? {
+      code, notes: '', credited: false, done: false, interested: false
     };
-
-    const newPersonalizations = [
-      ...personalizations.filter(m => m.code !== moduleCode),
-      newPersonalization
-    ];
-    localStorage.setItem(`modulePersonalization`, JSON.stringify(newPersonalizations));
   }
 
-  getModulePlanPersonalizations(degreeProgram: degreeProgram) {
-    const personalization = localStorage.getItem(`modulePlanPersonalization`);
-    if (personalization) {
-      const modulePlan = (JSON.parse(personalization) as ModulePlanPersonalization)
-      return modulePlan[degreeProgram] ?? [];
+  setModulePersonalization(code: string, personalization: Partial<ModulePersonalization>) {
+    const currentPersonalization = this.getModulePersonalization(code);
+
+    this.modulePersonalizations.update(personalizations => [
+      ...(personalizations.filter(p => p.code !== code)),
+      { ...currentPersonalization, ...personalization }
+    ]);
+  }
+
+  get modulePlan() {
+    return this.personalModulePlan.asReadonly();
+  }
+
+  getModuleBySemesterAndIndex(semesterIndex: number, moduleIndex: number): { code: string, template?: string } | null {
+    const currentPlan = this.personalModulePlan();
+    if (!currentPlan || !currentPlan.plan[semesterIndex]) return null;
+
+    return currentPlan.plan[semesterIndex][moduleIndex];
+  }
+
+  setModulePlan(plan: ({ code: string, template?: string } | null)[][], degreeProgram: string) {
+    this.personalModulePlan.set({ plan, degreeProgram });
+  }
+
+  updateModuleInPlan(semesterIndex: number, moduleIndex: number, code: string) {
+    const currentPlan = this.personalModulePlan();
+    if (!currentPlan) return;
+
+    let currentModule = currentPlan.plan[semesterIndex]?.[moduleIndex];
+    if (currentModule) {
+      if (!currentModule.template) {
+        currentModule.template = currentModule.code;
+      }
+      currentModule.code = code;
+    } else {
+      currentModule = { code, template: undefined };
     }
-    return [];
+
+    const updatedPlan = currentPlan.plan.map((semester, sIndex) =>
+      sIndex === semesterIndex
+        ? semester.map((mod, mIndex) => (mIndex === moduleIndex ? currentModule : mod))
+        : semester
+    );
+
+    this.personalModulePlan.set({
+      degreeProgram: currentPlan.degreeProgram,
+      plan: updatedPlan
+    });
   }
 
-  getModulePlanPersonalization(degreeProgram: degreeProgram, semesterIndex: number, moduleIndex: number) {
-    return this.getModulePlanPersonalizations(degreeProgram).find(c => c.semesterIndex === semesterIndex && c.moduleIndex === moduleIndex);
+  resetModuleInPlan(semesterIndex: number, moduleIndex: number) {
+    const currentPlan = this.personalModulePlan();
+    if (!currentPlan) return;
+
+    const resetModule = {
+      code: currentPlan.plan[semesterIndex]?.[moduleIndex]?.template ?? '',
+      template: undefined
+    }
+
+    const updatedPlan = currentPlan.plan.map((semester, sIndex) =>
+      sIndex === semesterIndex
+        ? semester.map((mod, mIndex) => (mIndex === moduleIndex ? resetModule : mod))
+        : semester
+    );
+
+    this.personalModulePlan.set({
+      degreeProgram: currentPlan.degreeProgram,
+      plan: updatedPlan
+    });
   }
 
-  setModulePlanPersonalization(degreeProgram: degreeProgram, semesterIndex: number, moduleIndex: number, linkedModule: string) {
-    const personalization = localStorage.getItem(`modulePlanPersonalization`) ?? "{}";
-    const modulePlan = (JSON.parse(personalization) as ModulePlanPersonalization)
-    const filteredModulPlan = (modulePlan[degreeProgram] ?? []).filter(p => !(p.semesterIndex === semesterIndex && p.moduleIndex === moduleIndex));
-    modulePlan[degreeProgram] = [...filteredModulPlan, ...(linkedModule ? [{ semesterIndex, moduleIndex, linkedModule }] : [])];
-    localStorage.setItem("modulePlanPersonalization", JSON.stringify(modulePlan));
+  resetModulePlan() {
+    this.personalModulePlan.set(undefined);
   }
 }
