@@ -1,10 +1,12 @@
-import { Component, computed, effect, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { LucideAngularModule } from 'lucide-angular';
 import { FormsModule } from '@angular/forms';
-import { DBModuleDefinition, ModuleDefinition, OfficialModuleDefinition } from '../../util/types';
 import { PersonalizationService } from '../../services/personalization.service';
+import { ModuleService } from '../../services/module.service';
+import { ModuleDefinition } from '../../util/types';
 import { DialogService } from '../../services/dialog.service';
-import { DBService } from '../../services/db.service';
+import { StateService } from '../../services/state.service';
+import { genericModules } from '../../util/modules';
 
 @Component({
   selector: 'app-plan',
@@ -13,60 +15,88 @@ import { DBService } from '../../services/db.service';
   styleUrl: './plan.component.css'
 })
 export class PlanComponent {
+  personalization = inject(PersonalizationService);
+  modules = inject(ModuleService);
+  dialog = inject(DialogService);
+  state = inject(StateService);
 
-  /*  private personalization = inject(PersonalizationService);
-   private dialog = inject(DialogService);
+  planningState = signal<"template" | "edit">("template");
+  private colorClasses = {
+    core: "bg-cyan-700",
+    project: "bg-orange-700",
+    elective: "bg-green-700",
+    major: "bg-green-600",
+    work: "bg-purple-700",
+  };
 
-   public selectedDegreeProgram = signal<degreeProgram>(this.personalization.getDegreeProgram());
-   public selectedModulePlan = computed(() => plans[this.selectedDegreeProgram()]);
 
-   constructor() {
-     effect(() => { this.personalization.setDegreeProgram(this.selectedDegreeProgram()); });
-   }
+  importModulePlan(modulePlan: (string)[], degreeProgram: string) {
+    const plan = modulePlan.map(semester => (JSON.parse(semester) as (string | null)[]).map(module => module ? ({ code: module, template: undefined }) : null));
+    this.personalization.setModulePlan(plan, degreeProgram);
+  }
 
-   asModules(codes: string[]): (ModuleDefinition | undefined)[] {
-     return codes.map(value => moduleMap.get(value));
-   }
+  public getModuleStyling(module: { current?: ModuleDefinition, template?: ModuleDefinition }) {
+    if (!module.current) {
+      return [];
+    }
 
-   public getModuleStyling(module: ModuleDefinition) {
-     const colorClasses = {
-       core: "bg-cyan-700",
-       project: "bg-orange-700",
-       elective: "bg-green-700",
-       major: "bg-green-600",
-       work: "bg-purple-700",
-     };
+    let type = undefined;
+    if (this.modules.isGenericModule(module.current)) {
+      type = module.current.type;
+    } else if (module.template && this.modules.isGenericModule(module.template)) {
+      type = module.template.type;
+    }
 
-     return [
-       ["col-span-1", "col-span-2", "col-span-3", "col-span-4"][Math.floor(module.credits / 3) - 1],
-       colorClasses[module.type as keyof typeof colorClasses] ?? "bg-zinc-700",
-     ]
-   }
+    type = type
+      ?? this.modules.getModuleType(module.current, this.personalization.modulePlan()!.degreeProgram)
+      ?? (module.template ? this.modules.getModuleType(module.template, this.personalization.modulePlan()!.degreeProgram) : undefined);
 
-   isCredited(module: ModuleDefinition): boolean {
-     const personalization = this.personalization.getModulePersonalization(module.code);
-     return personalization?.credited ?? false;
-   }
+    return [
+      ["col-span-1", "col-span-2", "col-span-3", "col-span-4"][Math.floor(module.current.credits / 3) - 1],
+      this.colorClasses[type as keyof typeof this.colorClasses] ?? "bg-zinc-700",
+    ]
+  }
 
-   isDone(module: ModuleDefinition): boolean {
-     const personalization = this.personalization.getModulePersonalization(module.code);
-     return personalization?.done ?? false;
-   }
+  getUnknownModuleStyling(moduleNames: { code: string; template?: string | undefined; } | null) {
+    const genericModule = genericModules.find(m => m.code === moduleNames?.code || m.code === moduleNames?.template);
+    if (!genericModule) {
+      return ["bg-zinc-700"];
+    }
 
-   selectModule(module: ModuleDefinition | undefined, semesterIndex: number | undefined, moduleIndex: number | undefined) {
-     if (!module) { return; }
+    return [this.colorClasses[genericModule.type] ?? "bg-zinc-700"];
+  }
 
-     this.dialog.openDialog(module, semesterIndex, moduleIndex);
-   }
+  resetModulePlan() {
+    if (!confirm("Bist du sicher, dass du den Modulplan zurücksetzen möchtest? Alle Änderungen gehen verloren.")) {
+      return;
+    }
 
-   resolveModule(module: ModuleDefinition, semesterIndex: number, moduleIndex: number) {
-     if (!module.isGenericModule) {
-       return { code: module.code, isPersonalized: false };
-     }
-     const personalization = this.personalization.getModulePlanPersonalization(this.personalization.getDegreeProgram(), semesterIndex, moduleIndex);
-     if (!personalization) {
-       return { code: module.code, isPersonalized: false };
-     }
-     return { code: personalization.linkedModule, isPersonalized: true };
-   } */
+    this.personalization.resetModulePlan();
+    this.planningState.set("template");
+  }
+
+  isCredited(module: ModuleDefinition): boolean {
+    const personalization = this.personalization.getModulePersonalization(module.code);
+    return personalization?.credited ?? false;
+  }
+
+  isDone(module: ModuleDefinition): boolean {
+    const personalization = this.personalization.getModulePersonalization(module.code);
+    return personalization?.done ?? false;
+  }
+
+  resolveModule(module: { current?: ModuleDefinition, template?: ModuleDefinition }) {
+    return { ...module.current ?? { code: 'Unbekannt' }, isPersonalized: Boolean(module.template) };
+  }
+
+  selectModule(module: { current?: ModuleDefinition, template?: ModuleDefinition }, semesterIndex: number | undefined, moduleIndex: number | undefined) {
+    if (!module.current) { return; }
+
+    this.dialog.openDialog({ current: module.current.code, template: module.template?.code }, semesterIndex, moduleIndex);
+  }
+
+  selectModuleTemplate(moduleNames: { code: string; template?: string | undefined; } | null, semesterIndex: number | undefined, moduleIndex: number | undefined) {
+    if (!moduleNames) { return; }
+    this.dialog.openDialog({ current: moduleNames.code, template: moduleNames.template }, semesterIndex, moduleIndex);
+  }
 }

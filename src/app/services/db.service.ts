@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Client, Databases, Query } from 'appwrite';
 import { environment } from '../../environments/environment.development';
-import { DBDegreeProgramConfig, DBModuleDefinition, ModuleGroup } from '../util/types';
+import { DBDegreeProgramConfig, DBModuleDefinition, DBSemesterPlan, ModuleGroup } from '../util/types';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +28,15 @@ export class DBService {
 
   async getDegreeProgramConfigs(): Promise<DBDegreeProgramConfig[]> {
     const result = await this.dbs.listDocuments<DBDegreeProgramConfig>("modules", "degree_program_configs", [
+      Query.limit(200),
+      Query.offset(0),
+      Query.orderAsc("name")
+    ]);
+    return result.documents;
+  }
+
+  async getSemesterPlans(): Promise<DBSemesterPlan[]> {
+    const result = await this.dbs.listDocuments<DBSemesterPlan>("modules", "semester_plans", [
       Query.limit(200),
       Query.offset(0),
       Query.orderAsc("name")

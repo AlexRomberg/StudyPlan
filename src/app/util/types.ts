@@ -1,10 +1,12 @@
 import { Models } from "appwrite";
+import { moduleGroups } from "./modules";
 
 export interface GenericModuleDefinition {
     code: string,
     name: string,
     credits: number,
     isGenericModule: true,
+    type: "core" | "project" | "elective" | "major" | "work"
 }
 
 export interface OfficialModuleDefinition {
@@ -22,13 +24,14 @@ export interface DBModuleDefinition extends OfficialModuleDefinition, Models.Doc
 export interface DBDegreeProgramConfig extends Models.Document {
     name: string;
     coreModules: string[];
+    projectModules: string[];
     extensionModules: string[];
     additionalModules: string[];
     blockweekModules: string[];
 }
 
 export type ModuleGroup = {
-    [key in "core" | "extension" | "additional" | "blockweek"]: OfficialModuleDefinition[]
+    [key in "core" | "project" | "extension" | "additional" | "blockweek"]: OfficialModuleDefinition[]
 }
 
 export enum Semester {
@@ -50,6 +53,11 @@ export interface ModulePersonalization {
     interested: boolean;
 }
 
+export interface DBSemesterPlan extends Models.Document {
+    name: string;
+    semesterModules: (string)[];
+    degreeProgram: string;
+}
 
 // --- CLEANUP --------------------------------------------
 export interface Module {

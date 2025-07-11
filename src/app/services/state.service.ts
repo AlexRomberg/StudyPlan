@@ -1,21 +1,18 @@
-import { computed, effect, inject, Injectable, resource, signal } from '@angular/core';
-import { DBService } from './db.service';
+import { computed, effect, Injectable, signal } from '@angular/core';
 import { ModuleDefinition } from '../util/types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StateService {
-  private db = inject(DBService);
-
   // State
   private temporaryState = signal({
     menuOpen: false,
-    dialogData: undefined as { module: ModuleDefinition, resolve: () => void, semesterIndex?: number, moduleIndex?: number } | undefined
+    dialogData: undefined as { module: { current: string, template?: string }, resolve: () => void, semesterIndex?: number, moduleIndex?: number } | undefined
   });
   private persistentState = signal({
-    degreeProgram: 'I-VZ',
-    moduleScope: "Informatik"
+    moduleScope: "Informatik",
+    hasSeenIntro: false,
   });
 
   private state = computed(() => ({
@@ -45,8 +42,8 @@ export class StateService {
 
   // Selectors
   public menuOpen = computed(() => this.state().menuOpen);
+  public hasSeenIntro = computed(() => this.state().hasSeenIntro);
   public moduleScope = computed(() => this.state().moduleScope);
-  public degreeProgram = computed(() => this.state().degreeProgram);
   public dialogData = computed(() => this.state().dialogData);
 
   // Setters
@@ -57,13 +54,6 @@ export class StateService {
     }));
   }
 
-  public setDegreeProgram(degreeProgram: string) {
-    this.persistentState.update(state => ({
-      ...state,
-      degreeProgram
-    }));
-  }
-
   public setModuleScope(moduleGrouping: string) {
     this.persistentState.update(state => ({
       ...state,
@@ -71,7 +61,7 @@ export class StateService {
     }));
   }
 
-  public setDialogData(module: ModuleDefinition, resolve: () => void, semesterIndex?: number, moduleIndex?: number) {
+  public setDialogData(module: { current: string, template?: string }, resolve: () => void, semesterIndex?: number, moduleIndex?: number) {
     this.temporaryState.update(state => ({
       ...state,
       dialogData: {
@@ -83,6 +73,13 @@ export class StateService {
         semesterIndex,
         moduleIndex
       }
+    }));
+  }
+
+  public closeIntroDialog() {
+    this.persistentState.update(state => ({
+      ...state,
+      hasSeenIntro: true
     }));
   }
 }

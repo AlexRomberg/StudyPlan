@@ -8,7 +8,7 @@ import { StateService } from './state.service';
 export class DialogService {
   private state = inject(StateService);
 
-  async openDialog(module: ModuleDefinition, semesterIndex?: number, moduleIndex?: number) {
+  async openDialog(module: { current: string, template?: string }, semesterIndex?: number, moduleIndex?: number) {
     return new Promise<void>((resolve) => {
       this.state.setDialogData(
         module,

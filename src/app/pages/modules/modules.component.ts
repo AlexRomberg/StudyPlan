@@ -23,6 +23,7 @@ export class ModulesComponent {
   moduleGroups = moduleGroups;
   modulesOpen = signal<{ [key in keyof ModuleGroup]: boolean }>({
     core: true,
+    project: true,
     extension: false,
     additional: false,
     blockweek: false
@@ -33,7 +34,7 @@ export class ModulesComponent {
   }
 
   openModule(module: ModuleDefinition) {
-    this.dialog.openDialog(module);
+    this.dialog.openDialog({ current: module.code });
   }
 
   toggleModuleGroup(group: keyof ModuleGroup) {
