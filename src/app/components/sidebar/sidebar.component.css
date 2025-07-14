@@ -6,8 +6,9 @@
 }
 
 .link-active {
+    /* move to code */
     &.link-active\:bg-zinc-800\/50 {
-        @apply bg-zinc-800/50;
+        @apply bg-zinc-800/50 ;
     }
 
     & .link-active\:text-cyan-400 {

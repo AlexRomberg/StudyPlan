@@ -11,4 +11,16 @@ import { StateService } from '../../services/state.service';
 })
 export class SidebarComponent {
   state = inject(StateService);
+  links = [
+    {
+      title: 'Modulübersicht',
+      route: 'modules',
+      icon: 'layout-list'
+    },
+    {
+      title: 'Studienplanung',
+      route: 'plan',
+      icon: 'grid-3x3'
+    }
+  ]
 }
