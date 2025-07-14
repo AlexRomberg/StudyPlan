@@ -1,0 +1,96 @@
+@if(state.dialogData(); as dialogData) {
+<div class="p-8 w-200 max-w-lvw bg-zinc-800/70 shadow-md shadow-black/50 backdrop-blur-lg rounded-xl" (click)="$event.stopPropagation();">
+    <span class="flex items-start justify-between mb-4">
+        <div>
+            <h1 class="text-3xl font-bold">{{resolvedModules().current?.name ?? dialogData.module.current}}</h1>
+            @if (resolvedModules().template) {
+            <p class="text-lg mb-2 text-zinc-400">{{resolvedModules().template?.code}}</p>
+            }
+        </div>
+        <span class="flex gap-2">
+            @if (resolvedModules().template) {
+            <button (click)="resetModuleAssignment()" class="text-zinc-400 hover:text-zinc-200 transition-colors p-2 hover:bg-zinc-700 rounded-lg flex items-center gap-2">
+                <lucide-icon name="trash-2" />
+                <p>Zurücksetzten</p>
+            </button>
+            }
+            <button (click)="dialog.closeDialog()" class="text-zinc-400 hover:text-zinc-200 transition-colors p-2 hover:bg-zinc-700 rounded-lg">
+                <lucide-icon name="x" />
+            </button>
+        </span>
+    </span>
+    @let resolvedCurrent = resolvedModules().current;
+    @if (resolvedCurrent && !modules.isGenericModule(resolvedCurrent!)) {
+    <div class="grid sm:grid-cols-3 grid-cols-2 gap-2 gap-y-4">
+        <span class="icon-container" title="ECTS-Credits">
+            <lucide-icon name="award" class="mr-1" />
+            <p class="text-lg font-semibold">{{resolvedCurrent.credits}}</p>
+            <p class="text-zinc-400 text-sm">Credits</p>
+        </span>
+        <span class="icon-container gap-4" title="Semesterdurchführung">
+            <lucide-icon name="sun-snow" />
+            <p class="text-lg font-semibold" title="HS = Herbstsemester, FS = Frühlingssemester">{{resolvedCurrent.semester | semester}}</p>
+        </span>
+        <span class="icon-container gap-4" title="Modulverantwortliche/-r">
+            <lucide-icon name="user-round" />
+            <p class="text-lg font-semibold">{{resolvedCurrent.lecturer}}</p>
+        </span>
+        <span class="icon-container gap-4" title="Unterrichtssprache">
+            <lucide-icon name="languages" />
+            <p class="text-lg font-semibold">{{resolvedCurrent.language | language}}</p>
+        </span>
+
+        @if (resolvedCurrent.url) {
+        <span class="icon-container gap-4">
+            <lucide-icon name="file-text" />
+            <a class="max-sm:hidden text-lg font-semibold icon-container" [href]="resolvedCurrent.url" target="_blank">Modulbeschreibung <lucide-icon name="external-link" size="16" /></a>
+            <a class="sm:hidden text-lg font-semibold icon-container" [href]="resolvedCurrent.url" target="_blank">PDF <lucide-icon name="external-link" size="16" /></a>
+        </span>
+        }
+        <a class="icon-container gap-2 self-end text-sm justify-self-end text-gray-400 translate-y-5 hover:bg-zinc-700/50 px-2 py-1 rounded-lg col-start-2 sm:col-start-3 row-start-3 sm:row-start-2" href="https://github.com/AlexRomberg/StudyPlan/issues/new?template=data_issue.yml" target="_blank">
+            <lucide-icon name="message-circle-warning" size="16" />
+            Problem melden
+        </a>
+    </div>
+    <hr class="my-8 border-zinc-600">
+    <div class="flex flex-col gap-2">
+        <p class="text-3xl mb-4 font-semibold text-handwritten">Anpassungen</p>
+        <span class="flex gap-2 mb-2">
+            <input id="credited" type="checkbox" class="w-4" [ngModel]="modulePersonalization()?.credited" (ngModelChange)="updatePersonalization('credited', $event)" />
+            <label for="credited" class="text-handwritten cursor-pointer">Angerechnet / Gestrichen</label>
+        </span><span class="flex gap-2 mb-2">
+            <input id="done" type="checkbox" class="w-4" [ngModel]="modulePersonalization()?.done" (ngModelChange)="updatePersonalization('done', $event)" />
+            <label for="done" class="text-handwritten cursor-pointer">Abgeschlossen</label>
+        </span><span class="flex gap-2">
+            <input id="interested" type="checkbox" class="w-4" [ngModel]="modulePersonalization()?.interested" (ngModelChange)="updatePersonalization('interested', $event)" />
+            <label for="interested" class="text-handwritten cursor-pointer">Interesse</label>
+        </span>
+        <span class="mt-2">
+            <label for="notes" class="text-handwritten">Notizen</label>
+            <textarea id="notes" class="w-full h-32 p-2 bg-zinc-700/50 rounded-lg text-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-600 resize-none placeholder:text-zinc-400" placeholder="Hier kannst du Notizen zum Modul machen." [ngModel]="modulePersonalization()?.notes" (ngModelChange)="updatePersonalization('notes', $event)"></textarea>
+        </span>
+    </div>
+    <span class="text-zinc-400 flex gap-2 mt-4 items-center text-sm"><lucide-icon name="lock" size="16" /> Anpassungen werden automatisch lokal gespeichert</span>
+    }@else{
+    <p class="text-handwritten">Eigene Bezeichnung</p>
+    <input type="text" class="w-full h-10 p-2 my-4 bg-zinc-700/50 rounded-lg text-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-600 placeholder:text-zinc-400" placeholder="Eigenes Modulkürzel eingeben" [ngModel]="customModuleCode()" (ngModelChange)="updateModuleText($event)" />
+    <span class="flex items-center gap-8 mb-4 text-zinc-400">
+        <hr class="w-full text-zinc-600">
+        <p>oder</p>
+        <hr class="w-full text-zinc-600">
+    </span>
+    <p class="text-handwritten">Modul zuweisen</p>
+    <select type="text" class="w-full h-10 p-2 my-4 bg-zinc-700/50 rounded-lg text-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-600 placeholder:text-zinc-400" [ngModel]="customModuleCode()" (ngModelChange)="updateModuleText($event)">
+        <option value="" selected>Modul auswählen</option>
+        @for (group of moduleGroups; track $index) {
+        @if (modules.modulesByScope()?.[group.key]; as modulesByScope) {
+        <optgroup [label]="group.name">
+            @for (module of modulesByScope; track $index) {
+            <option [value]="module.code">{{module.code}} - {{module.name}}</option>
+            }
+        </optgroup>
+        }}
+    </select>
+    }
+</div>
+}

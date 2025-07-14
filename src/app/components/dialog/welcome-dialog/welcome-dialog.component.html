@@ -1,0 +1,14 @@
+<div class="p-8 w-200 max-w-lvw bg-zinc-800/70 shadow-md shadow-black/50 backdrop-blur-lg rounded-xl" (click)="$event.stopPropagation();">
+    <h1 class="text-3xl font-bold mb-4">Willkommen im Modulplaner!</h1>
+    <p class="text-lg mb-4">Dieses Tool hilft dir in der Planung deiner Modulwahl an der HSLU-I.</p>
+    <p class="text-lg mb-4">Hier ein paar Infos vorne weg:</p>
+    <ul class="mb-4">
+        <li class="flex items-center gap-4 pb-6"><lucide-icon name="pen" />
+            <p>Alle Anpassungen von dir werden mit folgender <i class="text-handwritten pr-2 pl-1">"Handschrift"</i> markiert.</p>
+        </li>
+        <li class="flex items-center gap-4 pb-6"><lucide-icon name="lock" />Jegliche Anpassungen & Notizen werden lokal gespeichert.<br>Schau daher, dass dein Browser keine Website-Daten löscht.</li>
+        <li class="flex items-center gap-4 pb-4"><lucide-icon name="message-circle-warning" />Falsche Angaben und kaputte Links kannst du jeweils im Modul-Dialog melden.</li>
+    </ul>
+    <p class="text-lg mb-4">Viel Spass beim Planen!</p>
+    <button class="bg-cyan-700 text-white p-2 px-4 rounded-lg hover:bg-cyan-600 transition-colors w-full flex items-center justify-center" (click)="state.closeIntroDialog()">Loslegen</button>
+</div>

@@ -1,0 +1,10 @@
+<p>{{!state.hasSeenIntro()}} - {{!!state.dialogData()}}</p>
+@if(!state.hasSeenIntro() || state.dialogData()) {
+<div class="fixed top-0 left-0 min-w-full h-lvh grid py-4 items-center justify-center overflow-auto bg-zinc-950/50" (click)="state.closeIntroDialog()">
+    @if (!state.hasSeenIntro()) {
+    <app-welcome-dialog />
+    } @else {
+    <app-module-dialog />
+    }
+</div>
+}

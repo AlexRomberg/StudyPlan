@@ -1,28 +1,29 @@
 import { Component, computed, inject } from '@angular/core';
-import { DialogService } from '../../services/dialog.service';
+import { StateService } from '../../../services/state.service';
+import { genericModules, moduleGroups } from '../../../util/modules';
+import { ModuleService } from '../../../services/module.service';
 import { LucideAngularModule } from 'lucide-angular';
-import { PersonalizationService } from '../../services/personalization.service';
 import { FormsModule } from '@angular/forms';
-import { ModulePersonalization } from '../../util/types';
-import { StateService } from '../../services/state.service';
-import { SemesterPipe } from '../../pipes/semester.pipe';
-import { LanguagePipe } from '../../pipes/language.pipe';
-import { ModuleService } from '../../services/module.service';
-import { genericModules, moduleGroups } from '../../util/modules';
-
+import { PersonalizationService } from '../../../services/personalization.service';
+import { DialogService } from '../../../services/dialog.service';
+import { ModulePersonalization } from '../../../util/types';
+import { LanguagePipe } from '../../../pipes/language.pipe';
+import { SemesterPipe } from '../../../pipes/semester.pipe';
 
 @Component({
   selector: 'app-module-dialog',
   imports: [LucideAngularModule, FormsModule, LanguagePipe, SemesterPipe],
-  templateUrl: './module-dialog.component.html',
-  styleUrl: './module-dialog.component.css'
+  templateUrl: './module-dialog.component.html'
 })
 export class ModuleDialogComponent {
+  private personalization = inject(PersonalizationService);
+
   state = inject(StateService);
   dialog = inject(DialogService);
-  personalization = inject(PersonalizationService);
   modules = inject(ModuleService);
   moduleGroups = moduleGroups;
+
+
   resolvedModules = computed(() => {
     const module = this.state.dialogData()?.module
     const allModules = [...(this.modules.modules() ?? []), ...genericModules];
